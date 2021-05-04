@@ -1,0 +1,266 @@
+@host = http://localhost:3000
+
+###
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwMDYyMzg1LCJleHAiOjE2MjAwNjU5ODV9.C_Oy14Nb8_YVHRouFkZgjfra_ESQ13Djh-Xb6Efvs-U
+###
+
+GET {{host}}/api/user
+x-auth: {{token}}
+
+###
+
+POST {{host}}/api/user
+Content-Type: application/json
+
+{
+    "matrices": [
+      "id10",
+      "id112"
+    ],
+    "nombre": "Luis",
+    "apellido": "Perez",
+    "correo": "test3@test",
+    "Edad": 30,
+    "password": "Hola a todo el mundo"
+  }
+
+###
+POST  {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+    "correo": "test3@test",
+    "password": "Hola a todo el mundo"
+}
+###
+PUT {{host}}/api/user/test3@test
+Content-Type: application/json
+
+{
+    "matrices": [
+      "id22",
+      "id11"
+    ],
+    "nombre": "Ricardo",
+    "apellido": "Lee",
+    "correo": "test3@test",
+    "Edad": 30,
+    "password": "CACH"
+  }
+
+
+###
+
+DELETE {{host}}/api/user/test3@test
+
+###
+
+GET {{host}}/api/matrix
+
+###
+POST  {{host}}/api/matrix
+Content-Type: application/json
+
+{
+    "id": "2",
+    "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F08%2FIron-man-feature-image.jpg&f=1&nofb=1",
+    "nombre": "Superhéroes",
+    "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
+    "fecha": "28/04/2021",
+    "categoria1": {
+      "titulo": "Conocimiento general",
+      "pregunta1": "¿De qué editorial es spiderman?",
+      "respuesta1": "Marvel",
+      "valor1": 200,
+      "pregunta2": "¿Cuántos Robins ha tenido Batman canónicamente?",
+      "respuesta2": "4",
+      "valor2": 400,
+      "pregunta3": "¿De qué editorial es el cómic de Hellboy?",
+      "respuesta3": "Vértigo",
+      "valor3": 600,
+      "pregunta4": "¿Quién es el autor de watchmen?",
+      "respuesta4": "Alan Moore",
+      "valor4": 800,
+      "pregunta5": "¿Cuál es el nombre Kryptoniano de superman?",
+      "respuesta5": "Kal-el",
+      "valor5": 1000
+    },
+    "categoria2": {
+      "titulo": "Marvel",
+      "pregunta1": "¿Dónde salió por primera vez Spider-Man?",
+      "respuesta1": "Amazing Fantasy Nº15",
+      "valor1": 200,
+      "pregunta2": "¿En qué universo se desarrolla la continuidad general?",
+      "respuesta2": "616",
+      "valor2": 400,
+      "pregunta3": "¿Cómo se llamaba originalmente el alter ego de Thor?",
+      "respuesta3": "Donald Blake",
+      "valor3": 600,
+      "pregunta4": "¿Quienes son los autores del capitán américa?",
+      "respuesta4": "Stan Lee y Steve Ditkoz",
+      "valor4": 800,
+      "pregunta5": "¿Cómo se llama el universo principal cancelado?",
+      "respuesta5": "Universo ultimate",
+      "valor5": 1000
+    },
+    "categoria3": {
+      "titulo": "DC",
+      "pregunta1": "¿Cuál fue la primera aparición de Batman?",
+      "respuesta1": "Detective Comics N.º 27",
+      "valor1": 200,
+      "pregunta2": "¿En qué pueblo creció superman?",
+      "respuesta2": "Smallville",
+      "valor2": 400,
+      "pregunta3": "¿Barry Allen es qué de Wally West?",
+      "respuesta3": "Su tío político",
+      "valor3": 600,
+      "pregunta4": "¿Cuál es la debilidad del detective marciano?",
+      "respuesta4": "El fuego",
+      "valor4": 800,
+      "pregunta5": "¿Cuál era el nombre original del superhéroe Shazam?",
+      "respuesta5": "Capitán Marvel",
+      "valor5": 1000
+    },
+    "categoria4": {
+      "titulo": "Cultura general",
+      "pregunta1": "¿Cuantos ex tenía Ramona Flowers?",
+      "respuesta1": "7",
+      "valor1": 200,
+      "pregunta2": "¿Cuál es el autor de Sin City?",
+      "respuesta2": "Frank Miller",
+      "valor2": 400,
+      "pregunta3": "¿Cuál es el autor de Hellboy?",
+      "respuesta3": "Mike Mignola",
+      "valor3": 600,
+      "pregunta4": "¿Cuál es la identidad secreta de Deadpool?",
+      "respuesta4": "Wade Wilson",
+      "valor4": 800,
+      "pregunta5": "¿Quién asesinó al capitán américa?",
+      "respuesta5": "Su pareja Sharon Carter",
+      "valor5": 1000
+    },
+    "categoria5": {
+      "titulo": "Muy difícil",
+      "pregunta1": "¿Cuáles son los nombres de los robin en orden?",
+      "respuesta1": "Dick Grayson, Jason Todd, Tim Drake, Damian Wayne",
+      "valor1": 200,
+      "pregunta2": "¿Cómo se llama el personaje con el símbolo del hidrógeno en la frente?",
+      "respuesta2": "Dr. Manhatan",
+      "valor2": 400,
+      "pregunta3": "¿Cómo se llama spider-man de 2099?",
+      "respuesta3": "Miguel O-Hara",
+      "valor3": 600,
+      "pregunta4": "¿Nombra a los 4 fantásticos?",
+      "respuesta4": "Susan Storm, Johnny Storm, Reed Richards, Benjamin Grimm",
+      "valor4": 800,
+      "pregunta5": "¿Cuál es la debilidad de superman a parte de la criptonita?",
+      "respuesta5": "La magia",
+      "valor5": 1000
+    }
+  }
+
+###
+DELETE {{host}}/api/matrix/2
+
+###
+
+PUT  {{host}}/api/matrix/2
+Content-Type: application/json
+
+{
+    "id": "2",
+    "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F08%2FIron-man-feature-image.jpg&f=1&nofb=1",
+    "nombre": "SuperVillanos",
+    "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
+    "fecha": "28/04/2021",
+    "categoria1": {
+      "titulo": "Conocimiento general",
+      "pregunta1": "¿De qué editorial es spiderman?",
+      "respuesta1": "Marvel",
+      "valor1": 200,
+      "pregunta2": "¿Cuántos Robins ha tenido Batman canónicamente?",
+      "respuesta2": "4",
+      "valor2": 400,
+      "pregunta3": "¿De qué editorial es el cómic de Hellboy?",
+      "respuesta3": "Vértigo",
+      "valor3": 600,
+      "pregunta4": "¿Quién es el autor de watchmen?",
+      "respuesta4": "Alan Moore",
+      "valor4": 800,
+      "pregunta5": "¿Cuál es el nombre Kryptoniano de superman?",
+      "respuesta5": "Kal-el",
+      "valor5": 1000
+    },
+    "categoria2": {
+      "titulo": "Marvel",
+      "pregunta1": "¿Dónde salió por primera vez Spider-Man?",
+      "respuesta1": "Amazing Fantasy Nº15",
+      "valor1": 200,
+      "pregunta2": "¿En qué universo se desarrolla la continuidad general?",
+      "respuesta2": "616",
+      "valor2": 400,
+      "pregunta3": "¿Cómo se llamaba originalmente el alter ego de Thor?",
+      "respuesta3": "Donald Blake",
+      "valor3": 600,
+      "pregunta4": "¿Quienes son los autores del capitán américa?",
+      "respuesta4": "Stan Lee y Steve Ditkoz",
+      "valor4": 800,
+      "pregunta5": "¿Cómo se llama el universo principal cancelado?",
+      "respuesta5": "Universo ultimate",
+      "valor5": 1000
+    },
+    "categoria3": {
+      "titulo": "DC",
+      "pregunta1": "¿Cuál fue la primera aparición de Batman?",
+      "respuesta1": "Detective Comics N.º 27",
+      "valor1": 200,
+      "pregunta2": "¿En qué pueblo creció superman?",
+      "respuesta2": "Smallville",
+      "valor2": 400,
+      "pregunta3": "¿Barry Allen es qué de Wally West?",
+      "respuesta3": "Su tío político",
+      "valor3": 600,
+      "pregunta4": "¿Cuál es la debilidad del detective marciano?",
+      "respuesta4": "El fuego",
+      "valor4": 800,
+      "pregunta5": "¿Cuál era el nombre original del superhéroe Shazam?",
+      "respuesta5": "Capitán Marvel",
+      "valor5": 1000
+    },
+    "categoria4": {
+      "titulo": "Cultura general",
+      "pregunta1": "¿Cuantos ex tenía Ramona Flowers?",
+      "respuesta1": "7",
+      "valor1": 200,
+      "pregunta2": "¿Cuál es el autor de Sin City?",
+      "respuesta2": "Frank Miller",
+      "valor2": 400,
+      "pregunta3": "¿Cuál es el autor de Hellboy?",
+      "respuesta3": "Mike Mignola",
+      "valor3": 600,
+      "pregunta4": "¿Cuál es la identidad secreta de Deadpool?",
+      "respuesta4": "Wade Wilson",
+      "valor4": 800,
+      "pregunta5": "¿Quién asesinó al capitán américa?",
+      "respuesta5": "Su pareja Sharon Carter",
+      "valor5": 1000
+    },
+    "categoria5": {
+      "titulo": "Muy difícil",
+      "pregunta1": "¿Cuáles son los nombres de los robin en orden?",
+      "respuesta1": "Dick Grayson, Jason Todd, Tim Drake, Damian Wayne",
+      "valor1": 200,
+      "pregunta2": "¿Cómo se llama el personaje con el símbolo del hidrógeno en la frente?",
+      "respuesta2": "Dr. Manhatan",
+      "valor2": 400,
+      "pregunta3": "¿Cómo se llama spider-man de 2099?",
+      "respuesta3": "Miguel O-Hara",
+      "valor3": 600,
+      "pregunta4": "¿Nombra a los 4 fantásticos?",
+      "respuesta4": "Susan Storm, Johnny Storm, Reed Richards, Benjamin Grimm",
+      "valor4": 800,
+      "pregunta5": "¿Cuál es la debilidad de superman a parte de la criptonita?",
+      "respuesta5": "La magia",
+      "valor5": 1000
+    }
+  }
