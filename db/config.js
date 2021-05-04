@@ -1,5 +1,5 @@
 let config = {
-    db_user: 'Profesor1',
+    db_user: 'Profesor',
     password: 'HcaVB73NYBaxqw3h',
     db_name: 'DBProyecto',
     getUrl() {
