@@ -1,0 +1,90 @@
+[
+  {
+    "nombre": "Diego",
+    "apellido": "Ferreira",
+    "correo": "df@gmail.com",
+    "password": "HolaMundo1",
+    "fecha": "2020-02-02",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/61.jpg",
+    "uid": "ASDAL4sHO",
+    "token": "CbR7nl1Y1-ASDAL4sHO"
+  },
+  {
+    "nombre": "Armando",
+    "apellido": "Ferreira",
+    "correo": "afle@gmail.com",
+    "password": "HolaMundo2",
+    "fecha": "2021-02-02",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/52.jpg",
+    "uid": "YFWStkPtQ",
+    "token": "qhdU7or1I-YFWStkPtQ"
+  },
+  {
+    "nombre": "Armando",
+    "apellido": "lee Eng",
+    "correo": "afl@gmail.com",
+    "password": "HolaMundo3",
+    "fecha": "2020-02-02",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/64.jpg",
+    "uid": "a6h8AWGSl",
+    "token": "4mHP8Pz2q-a6h8AWGSl"
+  },
+  {
+    "nombre": "Ivan",
+    "apellido": "Diaz",
+    "correo": "ID@gmail.com",
+    "password": "IDiaz",
+    "fecha": "2000-02-20",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/87.jpg",
+    "uid": "Q_DuluBZU",
+    "token": "1smyLOTKS-Q_DuluBZU"
+  },
+  {
+    "nombre": "John",
+    "apellido": "Wick",
+    "correo": "JW@gmail.com",
+    "password": "JWick",
+    "fecha": "2000-01-25",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/53.jpg",
+    "uid": "t8vnH8JQp",
+    "token": "oFn98LtZY-t8vnH8JQp"
+  },
+  {
+    "nombre": "Jose",
+    "apellido": "Padilla",
+    "correo": "CRomo@gmail.com",
+    "password": "JKdsa",
+    "fecha": "1990-01-25",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/55.jpg",
+    "uid": "YGyjs83HM",
+    "token": "8YbpkESaR-YGyjs83HM"
+  },
+  {
+    "nombre": "Miguel",
+    "apellido": "De Santiago",
+    "correo": "miguethegod@gmail.com",
+    "password": "miang",
+    "fecha": "2000-07-02",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/62.jpg",
+    "uid": "czTS2QGaX",
+    "token": "NyvwqMRRK-czTS2QGaX"
+  },
+  {
+    "nombre": "Jose Luis",
+    "apellido": "Villa Nueva",
+    "correo": "JLVN@gmail.com",
+    "password": "12345",
+    "fecha": "1999-10-25",
+    "sexo": "H",
+    "imagen": "https://randomuser.me/api/portraits/men/48.jpg",
+    "uid": "FlAzsXZZM",
+    "token": "pCyg_Fv9v-FlAzsXZZM"
+  }
+]
