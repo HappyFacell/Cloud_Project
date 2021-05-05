@@ -1,7 +1,7 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwMTc2NDIyLCJleHAiOjE2MjAxODAwMjJ9.BRq4z-SzbtmO7YqfpxYsp25oW50RRCrP0DRmUPtUhKM
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwMjU0NTgwLCJleHAiOjE2MjAyNTgxODB9.G6xGrM8qSPv8Q8Bg7zLxK8Srmc89hguT_j_scbiOeVY
 ###
 
 GET {{host}}/api/user
