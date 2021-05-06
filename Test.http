@@ -1,5 +1,5 @@
 @host = https://proyectojeopardy2021.herokuapp.com
-
+# @host = http://localhost:3000
 ###
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwMjU0NTgwLCJleHAiOjE2MjAyNTgxODB9.G6xGrM8qSPv8Q8Bg7zLxK8Srmc89hguT_j_scbiOeVY
 ###
@@ -62,9 +62,8 @@ POST  {{host}}/api/matrix
 Content-Type: application/json
 
 {
-    "id": "2",
     "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F08%2FIron-man-feature-image.jpg&f=1&nofb=1",
-    "nombre": "Superhéroes",
+    "nombre": "Superhéroes2",
     "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
     "fecha": "28/04/2021",
     "categoria1": {

@@ -8,7 +8,7 @@ let MatrixSchema = mongoose.Schema({
     nombre: {
         type: String,
         required: true,
-        // unique: true
+        unique: true
     },
     url: {
         type: String,

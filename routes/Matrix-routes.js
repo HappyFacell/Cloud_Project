@@ -1,6 +1,7 @@
-const router = require('express').Router()
-const fs = require('fs')
-const path = require('path')
+const router = require('express').Router();
+const fs = require('fs');
+const path = require('path');
+const shortid = require('shortid');
 
 const Matrix = require('../models/Matrix');
 
@@ -36,7 +37,6 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     console.log(req.body);
     let {
-        id,
         nombre,
         url,
         descripcion,
@@ -47,7 +47,9 @@ router.post('/', async (req, res) => {
         categoria4,
         categoria5
     } = req.body;
-    if (id && nombre && url && descripcion && fecha && categoria1 && categoria2 && categoria3 && categoria4 && categoria5) {
+
+
+    if (nombre && url && descripcion && fecha && categoria1 && categoria2 && categoria3 && categoria4 && categoria5) {
 
         // alumnos.push({nombre, calificacion})
         // fs.writeFileSync(path.join(__dirname,'../alumnos.json'), JSON.stringify(alumnos))
@@ -56,7 +58,7 @@ router.post('/', async (req, res) => {
         // let hash = bcrypt.hashSync(password, 8);
 
         let doc = await Matrix.guardarDatos({
-            id,
+            id: shortid.generate(),
             nombre,
             url,
             descripcion,
