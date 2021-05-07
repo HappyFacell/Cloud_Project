@@ -3,7 +3,8 @@ const mongoose = require('../db/mongodb_connect')
 let MatrixSchema = mongoose.Schema({
     id: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     nombre: {
         type: String,
