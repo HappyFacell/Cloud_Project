@@ -21,8 +21,7 @@ let UserSchema = mongoose.Schema({
         required: true
     },
     matrices: {
-        type: Array,
-        required: true
+        type: Array
     },
     password:{
         type: String,

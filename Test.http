@@ -1,7 +1,7 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwMjU0NTgwLCJleHAiOjE2MjAyNTgxODB9.G6xGrM8qSPv8Q8Bg7zLxK8Srmc89hguT_j_scbiOeVY
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNjA3OTcwLCJleHAiOjE2MjA2MTE1NzB9.Gjb304oxvQwaZbevppIYnD9V_I9ouj99xt8oCIF0biQ
 ###
 
 GET {{host}}/api/user
@@ -27,7 +27,7 @@ Content-Type: application/json
 ###
 POST  {{host}}/api/auth/login
 Content-Type: application/json
-
+#rofus117
 {
     "correo": "test3@test",
     "password": "Hola a todo el mundo"
