@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 // /alumnos
 
 router.get('/:id', async (req, res) => {
-    let doc = await User.getMatrix(req.params.id)
+    let doc = await Matrix.getMatrix(req.params.id)
     res.send(doc)
 })
 

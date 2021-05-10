@@ -86,10 +86,9 @@ MatrixSchema.statics.getMatrix = async id => {
     let doc = await Matrix.findOne({
         id
     })
-    let doc = await Matrix.findById(id)
+    //let doc = await Alumno.findById(id)
     return doc;
 }
-
 MatrixSchema.statics.deleteMatrix = async function (id) {
     let doc = await Matrix.findOneAndDelete({
         id
