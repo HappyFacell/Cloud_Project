@@ -51,7 +51,7 @@ DELETE {{host}}/api/user/test3@test
 
 ###
 
-GET {{host}}/api/matrix
+GET {{host}}/api/matrix/CMujcd5qW
 
 ###
 POST  {{host}}/api/matrix
