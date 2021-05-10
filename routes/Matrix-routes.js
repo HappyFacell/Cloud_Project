@@ -1,8 +1,6 @@
 const router = require('express').Router();
-const fs = require('fs');
-const path = require('path');
 const shortid = require('shortid');
-
+const moment = require('moment')
 const Matrix = require('../models/Matrix');
 
 
@@ -40,7 +38,6 @@ router.post('/', async (req, res) => {
         nombre,
         url,
         descripcion,
-        fecha,
         categoria1,
         categoria2,
         categoria3,
@@ -49,7 +46,7 @@ router.post('/', async (req, res) => {
     } = req.body;
 
 
-    if (nombre && url && descripcion && fecha && categoria1 && categoria2 && categoria3 && categoria4 && categoria5) {
+    if (nombre && url && descripcion && categoria1 && categoria2 && categoria3 && categoria4 && categoria5) {
 
         // alumnos.push({nombre, calificacion})
         // fs.writeFileSync(path.join(__dirname,'../alumnos.json'), JSON.stringify(alumnos))
@@ -62,7 +59,7 @@ router.post('/', async (req, res) => {
             nombre,
             url,
             descripcion,
-            fecha,
+            fecha: moment().format('DD/MM/YYYY'),
             categoria1,
             categoria2,
             categoria3,

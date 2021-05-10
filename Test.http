@@ -51,7 +51,7 @@ DELETE {{host}}/api/user/test3@test
 
 ###
 
-GET {{host}}/api/matrix/CMujcd5qW
+GET {{host}}/api/matrix
 
 ###
 POST  {{host}}/api/matrix
@@ -59,9 +59,8 @@ Content-Type: application/json
 
 {
     "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F08%2FIron-man-feature-image.jpg&f=1&nofb=1",
-    "nombre": "Superhéroes",
+    "nombre": "SuperhéroesTestMoment",
     "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
-    "fecha": "28/04/2021",
     "categoria1": {
       "titulo": "Conocimiento general",
       "pregunta1": "¿De qué editorial es spiderman?",
