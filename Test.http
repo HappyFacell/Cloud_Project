@@ -13,13 +13,9 @@ POST {{host}}/api/user
 Content-Type: application/json
 
 {
-    "matrices": [
-      "id10",
-      "id112"
-    ],
-    "nombre": "Luis",
+    "nombre": "Petro",
     "apellido": "Perez",
-    "correo": "test3@test",
+    "correo": "test4@test",
     "Edad": 30,
     "password": "Hola a todo el mundo"
   }

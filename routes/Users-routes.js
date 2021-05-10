@@ -35,10 +35,9 @@ router.post('/', async (req, res) => {
         apellido,
         correo,
         Edad,
-        matrices,
         password
     } = req.body;
-    if (nombre && apellido && correo && Edad && matrices && password) {
+    if (nombre && apellido && correo && Edad && password) {
 
         let hash = bcrypt.hashSync(password, 8);
 
@@ -47,7 +46,6 @@ router.post('/', async (req, res) => {
             apellido,
             correo,
             Edad,
-            matrices,
             password: hash
         })
         console.log(doc);
