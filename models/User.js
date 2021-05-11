@@ -30,6 +30,10 @@ let UserSchema = mongoose.Schema({
     fecha:{
         type: String,
         required: true
+    },
+    url:{
+        type:String,
+        required:true
     }
 })
 
