@@ -16,7 +16,7 @@ router.post('/login', validaciones.validarLogin, async (req, res) => {
             let token = jwt.sign({
                 correo: user.correo
             }, 'Jeopardy', {
-                expiresIn: 60 * 60
+                expiresIn: 60 * 180
             })
             res.send({
                 token: token
