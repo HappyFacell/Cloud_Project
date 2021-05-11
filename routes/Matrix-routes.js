@@ -2,11 +2,12 @@ const router = require('express').Router();
 const shortid = require('shortid');
 const moment = require('moment')
 const Matrix = require('../models/Matrix');
+const validaciones = require('../middlewares/validaciones')
 
 
 
 
-router.get('/', async (req, res) => {
+router.get('/', validaciones.estaAutenticado, async (req, res) => {
 
     // {prop1:asdfsdf, pro2: sfd , nombre:'test'}   
 
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
 
 // /alumnos
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', validaciones.estaAutenticado, async (req, res) => {
     let doc = await Matrix.getMatrix(req.params.id)
     res.send(doc)
 })
@@ -80,12 +81,12 @@ router.post('/', async (req, res) => {
     })
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', validaciones.estaAutenticado, async (req, res) => {
     let doc = await Matrix.updateDatos(req.params.id, req.body);
     res.send(doc)
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', validaciones.estaAutenticado, async (req, res) => {
     let doc = await Matrix.deleteMatrix(req.params.id)
     res.send(doc)
 })
