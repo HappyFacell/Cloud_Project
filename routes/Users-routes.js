@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const validaciones = require('../middlewares/validaciones')
-
+const moment = require('moment')
 const User = require('../models/User');
 
 
@@ -46,7 +46,8 @@ router.post('/', async (req, res) => {
             apellido,
             correo,
             Edad,
-            password: hash
+            password: hash,
+            fecha: moment().format('DD/MM/YYYY'),
         })
         console.log(doc);
         if (doc && !doc.error) {

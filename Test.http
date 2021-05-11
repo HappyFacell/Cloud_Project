@@ -1,7 +1,7 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNzU4MDYzLCJleHAiOjE2MjA3NjE2NjN9.-b4UBg5mPozxF4ztvIh0QBBZDvRzRyddQsJcC2hQQ94
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNzYyMDU4LCJleHAiOjE2MjA3NzI4NTh9.Z3LfuEnzXxgdYqNVuA0AeuaXvb8VRV1Pat_umf6HWCU
 ###
 
 GET {{host}}/api/user/test3@test
@@ -155,18 +155,18 @@ Content-Type: application/json
   }
 
 ###
-DELETE {{host}}/api/matrix/-XsK9AqYF
+DELETE {{host}}/api/matrix/xC1Rsn4zC
 x-auth: {{token}}
 
 ###
 
-PUT  {{host}}/api/matrix/s9s3I759-
+PUT  {{host}}/api/matrix/sw3fB24tf
 Content-Type: application/json
+x-auth: {{token}}
 
 {
-    "id": "2",
     "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0276f574-98ea-4e2d-ba44-68f500bf01bc/ddzwl1q-e1bc144e-dfb8-4762-9c09-e2dc22695568.png/v1/fill/w_662,h_347,strp/resident_evil_8_village_logo_png_by_xgamergreaserx_ddzwl1q-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzQ3IiwicGF0aCI6IlwvZlwvMDI3NmY1NzQtOThlYS00ZTJkLWJhNDQtNjhmNTAwYmYwMWJjXC9kZHp3bDFxLWUxYmMxNDRlLWRmYjgtNDc2Mi05YzA5LWUyZGMyMjY5NTU2OC5wbmciLCJ3aWR0aCI6Ijw9NjYyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.ICy3D-5oRWvpBvZ0XEVyMuSswnLJhwiy7dzTRSY6xyY",
-    "nombre": "SuperVillanos",
+    "nombre": "SuperVillanos123",
     "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
     "fecha": "28/04/2021",
     "categoria1": {

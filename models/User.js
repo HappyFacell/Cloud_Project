@@ -26,6 +26,10 @@ let UserSchema = mongoose.Schema({
     password:{
         type: String,
         required: true
+    },
+    fecha:{
+        type: String,
+        required: true
     }
 })
 
