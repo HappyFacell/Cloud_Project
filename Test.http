@@ -1,10 +1,10 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNzYyMDU4LCJleHAiOjE2MjA3NzI4NTh9.Z3LfuEnzXxgdYqNVuA0AeuaXvb8VRV1Pat_umf6HWCU
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNzc3MzgxLCJleHAiOjE2MjA3ODgxODF9.DHC4-CpiPJI8tdoYL6HR0i3R36617hFa3nxR6fRX5Eo
 ###
 
-GET {{host}}/api/user/test3@test
+GET {{host}}/api/user
 x-auth: {{token}}
 
 ###

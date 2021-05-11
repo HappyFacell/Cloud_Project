@@ -34,6 +34,10 @@ let UserSchema = mongoose.Schema({
     url:{
         type:String,
         required:true
+    },
+    sexo:{
+        type:String,
+        required:true
     }
 })
 
