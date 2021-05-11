@@ -4,7 +4,7 @@
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNjA4ODA5LCJleHAiOjE2MjA2MTI0MDl9.-f_E2odtGWiI2QyirEIyaurVPz66lqzXg_saKlakw4g
 ###
 
-GET {{host}}/api/user
+GET {{host}}/api/user/test3@test
 x-auth: {{token}}
 
 ###
@@ -158,12 +158,12 @@ DELETE {{host}}/api/matrix/2
 
 ###
 
-PUT  {{host}}/api/matrix/2
+PUT  {{host}}/api/matrix/s9s3I759-
 Content-Type: application/json
 
 {
     "id": "2",
-    "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F08%2FIron-man-feature-image.jpg&f=1&nofb=1",
+    "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0276f574-98ea-4e2d-ba44-68f500bf01bc/ddzwl1q-e1bc144e-dfb8-4762-9c09-e2dc22695568.png/v1/fill/w_662,h_347,strp/resident_evil_8_village_logo_png_by_xgamergreaserx_ddzwl1q-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzQ3IiwicGF0aCI6IlwvZlwvMDI3NmY1NzQtOThlYS00ZTJkLWJhNDQtNjhmNTAwYmYwMWJjXC9kZHp3bDFxLWUxYmMxNDRlLWRmYjgtNDc2Mi05YzA5LWUyZGMyMjY5NTU2OC5wbmciLCJ3aWR0aCI6Ijw9NjYyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.ICy3D-5oRWvpBvZ0XEVyMuSswnLJhwiy7dzTRSY6xyY",
     "nombre": "SuperVillanos",
     "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
     "fecha": "28/04/2021",

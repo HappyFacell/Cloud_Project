@@ -15,12 +15,12 @@ router.get('/', validaciones.estaAutenticado, async (req, res) => {
 
 // /alumnos
 
-router.get('/:email', async (req, res) => {
+router.get('/:email', validaciones.estaAutenticado, async (req, res) => {
     let doc = await User.getUser(req.params.email)
     res.send(doc)
 })
 
-router.get('/nombre/:nombre', (req, res) => {
+router.get('/nombre/:nombre', validaciones.estaAutenticado, (req, res) => {
     let nom = req.params.nombre;
     res.send(User.filter(a => a.nombre.toLowerCase() == nom.toLowerCase()))
 
@@ -62,13 +62,13 @@ router.post('/', async (req, res) => {
     })
 })
 
-router.put('/:email', async (req, res) => {
+router.put('/:email', validaciones.estaAutenticado, async (req, res) => {
     req.body.password = bcrypt.hashSync(req.body.password, 8);
     let doc = await User.updateDatos(req.params.email, req.body);
     res.send(doc)
 })
 
-router.delete('/:email', async (req, res) => {
+router.delete('/:email', validaciones.estaAutenticado, async (req, res) => {
     let doc = await User.deleteUser(req.params.email)
     res.send(doc)
 })
