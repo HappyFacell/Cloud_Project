@@ -24,11 +24,139 @@ let MatrixSchema = mongoose.Schema({
         required: true
     },
     categoria1: {
-        type: Object,
+        titulo: {
+            type: String,
+            required: true,
+            unique: true
+        },
+        pregunta1: {
+            type: String,
+            required: true
+        },
+        respuesta1: {
+            type: String,
+            required: true
+        },
+        valor1: {
+            type: Number,
+            required: true,
+        },
+        pregunta2: {
+            type: String,
+            required: true
+        },
+        respuesta2: {
+            type: String,
+            required: true
+        },
+        valor2: {
+            type: Number,
+            required: true,
+        },
+        pregunta3: {
+            type: String,
+            required: true
+        },
+        respuesta3: {
+            type: String,
+            required: true
+        },
+        valor3: {
+            type: Number,
+            required: true,
+        },
+        pregunta4: {
+            type: String,
+            required: true
+        },
+        respuesta4: {
+            type: String,
+            required: true,
+        },
+        valor4: {
+            type: Number,
+            required: true,
+        },
+        pregunta5: {
+            type: String,
+            required: true,
+        },
+        respuesta5: {
+            type: String,
+            required: true,
+        },
+        valor5: {
+            type: Number,
+            required: true,
+        },
         required: true
     },
     categoria2: {
-        type: Object,
+        titulo: {
+            type: String,
+            required: true,
+            unique: true
+        },
+        pregunta1: {
+            type: String,
+            required: true
+        },
+        respuesta1: {
+            type: String,
+            required: true
+        },
+        valor1: {
+            type: Number,
+            required: true,
+        },
+        pregunta2: {
+            type: String,
+            required: true
+        },
+        respuesta2: {
+            type: String,
+            required: true
+        },
+        valor2: {
+            type: Number,
+            required: true,
+        },
+        pregunta3: {
+            type: String,
+            required: true
+        },
+        respuesta3: {
+            type: String,
+            required: true
+        },
+        valor3: {
+            type: Number,
+            required: true,
+        },
+        pregunta4: {
+            type: String,
+            required: true
+        },
+        respuesta4: {
+            type: String,
+            required: true,
+        },
+        valor4: {
+            type: Number,
+            required: true,
+        },
+        pregunta5: {
+            type: String,
+            required: true,
+        },
+        respuesta5: {
+            type: String,
+            required: true,
+        },
+        valor5: {
+            type: Number,
+            required: true,
+        },
         required: true
     },
     categoria3: {
