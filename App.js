@@ -12,7 +12,7 @@ const cors = require('cors')
 const app = express();
 const port = process.env.PORT || 3000;
 
-// app.use(cors())
+app.use(cors())
 app.use(log, test);
 app.use(express.static(__dirname + '/public/index'))
 app.use(express.json());
