@@ -12,6 +12,7 @@ function compareTeam(a, b){
 
 function puntuacionToHTML(array){
     array.sort(compareTeam);
+    console.log(array);
     let string ="<br>";
     document.getElementById("info").innerHTML = `
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
