@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 
 app.use(cors())
 app.use(log, test);
-app.use(express.static(__dirname + '/public/Index.html'))
+app.use(express.static(__dirname +"/public/Index.html"))
 app.use(express.json());
 app.use('/api/user', userRouter);
 app.use('/api/matrix', matrixRouter);
