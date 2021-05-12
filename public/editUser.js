@@ -13,7 +13,7 @@ function usertoHTML(user) {
                     <b>Nombre:</b>
                     <div class="input-group is-valid">
                         <input type="text" class="form-control is-valid" aria-describedby="validatedInputGroupPrepend"
-                            required pattern="[a-zA-Z\s]+" name="nombre" value="${user.nombre}">
+                            required name="nombre" value="${user.nombre}">
                         <div class="invalid-feedback">
                             Falta llenar campo
                         </div>
@@ -23,7 +23,7 @@ function usertoHTML(user) {
                     <b>Apellido:</b>
                     <div class="input-group is-valid">
                         <input type="text" class="form-control is-valid" aria-describedby="validatedInputGroupPrepend"
-                            required pattern="[a-zA-Z\s]+" name="apellido" value="${user.apellido}">
+                            required name="apellido" value="${user.apellido}">
                         <div class="invalid-feedback">
                             Falta llenar campo
                         </div>

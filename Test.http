@@ -1,7 +1,7 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNzg4NTk4LCJleHAiOjE2MjA3OTkzOTh9.S3apMmXuH3Dg0eME8tndwW8DJVeypuaedKQU9UtYPyo
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwODM1NjM4LCJleHAiOjE2MjA4NDY0Mzh9.qdp6d7QL98KuXwXbODXCQhxyBh3x526gXyxoQH9vWAI
 ###
 
 GET {{host}}/api/user
@@ -31,19 +31,17 @@ Content-Type: application/json
     "password": "Hola a todo el mundo"
 }
 ###
-PUT {{host}}/api/user/test3@test
+PUT {{host}}/api/user/ma.ayuso@hotmail.com
 Content-Type: application/json
 
 {
-    "matrices": [
-      "id22",
-      "id11"
-    ],
-    "nombre": "Ricardo",
-    "apellido": "Lee",
-    "correo": "test3@test",
-    "Edad": 30,
-    "password": "CACH"
+    {
+    "nombre": "Mariana",
+    "apellido": "Ayuso Flores",
+    "Edad": 19,
+    "url": "https://dogtime.com/assets/uploads/2011/03/puppy-development.jpg",
+    "sexo": "M"
+  }
   }
 
 
