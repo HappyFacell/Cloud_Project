@@ -12,10 +12,10 @@ const cors = require('cors')
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors())
+// app.use(cors())
 app.use(log, test);
 app.use(express.json());
-app.use(express.static(__dirname + '/public/index'))
+app.use('/index', express.static(__dirname + '/public/index'))
 app.use('/api/user', userRouter);
 app.use('/api/matrix', matrixRouter);
 app.use('/api/auth', loginRouter);
