@@ -13,11 +13,13 @@ POST {{host}}/api/user
 Content-Type: application/json
 
 {
-    "nombre": "Petro",
-    "apellido": "Perez",
-    "correo": "test4@test",
-    "Edad": 30,
-    "password": "Hola a todo el mundo"
+  "Edad": "21",
+  "apellido": "Quirarte",
+  "correo": "cq@gmail.com",
+  "nombre": "Carlos",
+  "password": "rufus117",
+  "url": "https://cdn.discordapp.com/attachments/694203486061199396/841818081076052008/unknown.png",
+  "sexo": "Hombre"
   }
 
 ###
@@ -47,7 +49,8 @@ Content-Type: application/json
 
 ###
 
-DELETE {{host}}/api/user/test3@test
+DELETE {{host}}/api/user/dp5@gmail.com
+x-auth : {{token}}
 
 ###
 

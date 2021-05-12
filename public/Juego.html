@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>HTML5 / CSS Jeopardy Template</title>
+
+    <link rel="stylesheet" href="Juego.css">
+    <script type="text/javascript" src="logic.js"></script>
+    <script src="logic2.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+        
+</head>
+
+<body>
+    <div id="gameplay">
+        <div class="grid grid-play " style="height:100vh; " role="table" aria-label="Game Board">
+            <div class="grid-row grid-row-cats" role="row">
+
+                <div class="grid-cell " data-row="0" data-col="0">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell" role="columnheader" id="primeraColumna">Primera columna</div>
+                    </div>
+                </div>
+
+                <div class="grid-cell " data-row="0" data-col="1">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell" role="columnheader" id="segundaColumna">Segunda columna</div>
+                    </div>
+                </div>
+
+                <div class="grid-cell " data-row="0" data-col="2">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell" role="columnheader" id="terceraColumna">Tercera columna</div>
+                    </div>
+                </div>
+
+                <div class="grid-cell " data-row="0" data-col="3">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell" role="columnheader" id="cuartaColumna">Cuarta columna</div>
+                    </div>
+                </div>
+
+                <div class="grid-cell " data-row="0" data-col="4">
+                    <div class="cell">
+                        <div class="cell-inner cat-cell" role="columnheader" id="quintaColumna">Quinta columna</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-row grid-row-questions  grid-first-row" role="row">
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098732" tabindex="0" aria-label="100" data-row="1" data-col="0">
+                    <div class="cell points" id="1">
+                    </div>
+                </div>
+
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098742" tabindex="0" aria-label="100" data-row="1" data-col="1">
+                    <div class="cell points" id="2">
+                    </div>
+                </div>
+
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098752" tabindex="0" aria-label="100" data-row="1" data-col="2">
+                    <div class="cell points" id="3">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098762" tabindex="0" aria-label="100" data-row="1" data-col="3">
+                    <div class="cell points" id="4">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098772" tabindex="0" aria-label="100" data-row="1" data-col="4">
+                    <div class="cell points" id="5">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row grid-row-questions  " role="row">
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098734" tabindex="0" aria-label="200" data-row="2" data-col="0">
+                    <div class="cell points" id="6">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098744" tabindex="0" aria-label="200" data-row="2" data-col="1" >
+                    <div class="cell points" id="7">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell  
+                " role="cell" id="cell-65098754" tabindex="0" aria-label="200" data-row="2" data-col="2" >
+                    <div class="cell points" id="8">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098764" tabindex="0" aria-label="200" data-row="2" data-col="3" >
+                    <div class="cell points" id="9">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098774" tabindex="0" aria-label="200" data-row="2" data-col="4" >
+
+                    <div class="cell points" id="10">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row grid-row-questions  " role="row">
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098736" tabindex="0" aria-label="300" data-row="3" data-col="0">
+                    <div class="cell points" id="11">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098746" tabindex="0" aria-label="300" data-row="3" data-col="1">
+                    <div class="cell points" id="12">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098756" tabindex="0" aria-label="300" data-row="3" data-col="2">
+                    <div class="cell points" id="13">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098766" tabindex="0" aria-label="300" data-row="3" data-col="3">
+                    <div class="cell points" id="14">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098776" tabindex="0" aria-label="300" data-row="3" data-col="4">
+                    <div class="cell points" id="15">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row grid-row-questions  " role="row">
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098738" tabindex="0" aria-label="400" data-row="4" data-col="0">
+                    <div class="cell points" id="16">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                
+                " role="cell" id="cell-65098748" tabindex="0" aria-label="400" data-row="4" data-col="1">
+                    <div class="cell points" id="17">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098758" tabindex="0" aria-label="400" data-row="4" data-col="2">
+                    <div class="cell points" id="18">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098768" tabindex="0" aria-label="400" data-row="4" data-col="3">
+                    <div class="cell points" id="19">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098778" tabindex="0" aria-label="400" data-row="4" data-col="4">
+                    <div class="cell points" id="20">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-row grid-row-questions grid-last-row " role="row">
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098740" tabindex="0" aria-label="500" data-row="5" data-col="0">
+                    <div class="cell points" id="21">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098750" tabindex="0" aria-label="500" data-row="5" data-col="1">
+                    <div class="cell points" id="22">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+            
+                " role="cell" id="cell-65098760" tabindex="0" aria-label="500" data-row="5" data-col="2">
+                    <div class="cell points" id="23">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098770" tabindex="0" aria-label="500" data-row="5" data-col="3">
+                    <div class="cell points" id="24">
+                    </div>
+                </div>
+                <div class="
+                    cell-group
+                    grid-cell
+                    
+                " role="cell" id="cell-65098780" tabindex="0" aria-label="500" data-row="5" data-col="4">
+                    <div class="cell points" id="25">
+                    </div>
+                </div>
+            </div>
+
+            <div class="click-to-zoom">
+                <span>Click to zoom</span>
+            </div>
+        </div>
+        <div id="question-modal" class="modal-wrapper" role="dialog" aria-label="Prompt" aria-modal="true">
+            <div id="modal-header">
+                <div tabindex="0" role="button" aria-label="Close prompt (escape)" id="continue-button">
+                    <div>Continuar <kbd>ESC</kbd></div>
+                </div>
+                <div id="question-title"></div>
+                <div tabindex="0" role="button" aria-label="Reveal answer (spacebar)" id="answer-button" tabindex="0">
+                    <div>Revelar respuesta correcta<kbd>Espacio</kbd></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-inner"></div>
+            </div>
+        </div>
+        <div id="teams">
+            <a role="button" class="menu-picker" href="javascript:backToMenu('menu')" aria-label="Menu Button">
+                M<br>e<br>n<br>u
+            </a>
+            <div style="display:flex; margin-left:auto; margin-right:auto; overflow:auto;">
+                <div class="team" style="display:none">
+                    <div class="name" role="textbox" contenteditable="true">Team 1</div>
+                    <div class="points" role="textbox" contenteditable="true">0</div>
+                    <div class="pointer">
+                        <span tabindex="0" aria-label="Add points" role="button" class="plus"><i
+                                class="fas fa-plus"></i></span>
+                        <span tabindex="0" aria-label="Subtract points" role="button" class="minus"><i
+                                class="fas fa-minus"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="options" class="modal-wrapper" role="dialog" aria-label="Menu" aria-modal="true">
+        <div class="modal">
+            <h1 id="tituloMatriz">JeopardyTitulo</h1>
+            <div id="team-chooser-wrapper">
+                <select id="team-chooser">
+                    <option value="0">Sin equipos</option>
+                    <option value="1">1 equipo</option>
+                    <option value="2">2 equipos</option>
+                    <option value="3" selected="true">3 equipos</option>
+                    <option value="4">4 equipos</option>
+                    <option value="5">5 equipos</option>
+                    <option value="6">6 equipos</option>
+                    <option value="7">7 equipos</option>
+                    <option value="8">8 equipos</option>
+                    <option value="9">9 equipos</option>
+                    <option value="10">10 equipos</option>
+                    <option id="last-option" value="more">Personalizado</option>
+                </select>
+                <input class="submit" type="button" id="submit" value="Start" onclick="game.init()" />
+                <span id="reset-all">
+                    <input type="button" id="re-init" value="Reiniciar juego" />
+                </span>
+            </div>
+            <p id="fullscreen" style="display:none" align="center"><span id="windows" style="display:none">Presiona
+                    <kbd>F11</kbd></span> <span id="mac" style="display:none">Select menu option <kbd>View &gt; Enter
+                        Fullscreen</kbd></span> para pantalla completa</p>
+            <a href="Create_Edit.html">Volver al menú de matrices</a>
+
+            <script>
+                if (window.navigator.platform.indexOf("Mac") == 0) {
+                    document.getElementById("fullscreen").style.display = "block";
+                    document.getElementById("mac").style.display = "inline";
+                } else if (window.navigator.platform.indexOf("Win") == 0) {
+                    document.getElementById("fullscreen").style.display = "block";
+                    document.getElementById("windows").style.display = "inline";
+                }
+            </script>
+        </div>
+    </div>
+</body>
+<script src="Juego.js"></script>
+
+</html>
