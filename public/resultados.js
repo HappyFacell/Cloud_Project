@@ -52,6 +52,7 @@ function puntuacionToHTML(array) {
         string += `<p>Lugar: ${x+1}. ${array[x].name} con ${array[x].points} puntos</p>`;
     }
     document.getElementById("perdedores").innerHTML += string;
+    
     sessionStorage.equipos = undefined;
 }
 
