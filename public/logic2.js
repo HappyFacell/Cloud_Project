@@ -1,3 +1,4 @@
+sessionStorage.equipos =[];
 var modal = function () { }
 
 var game = {}
@@ -6,6 +7,7 @@ var grid = null;
 var current_cell = null;
 
 function getCurrentState() {
+
     var teams = [];
     var teams_dom = document.querySelectorAll(".team");
     for (var i = 0; i < teams_dom.length; i++) {
@@ -13,6 +15,10 @@ function getCurrentState() {
         var name = t.querySelectorAll(".name")[0].textContent;
         var points = t.querySelectorAll(".points")[0].textContent;
         teams[i] = { name: name, points: points }
+    }
+    if(document.querySelectorAll(".inert").length == 25){
+        sessionStorage.equipos = JSON.stringify(teams);
+        window.location.href = "resultados.html";
     }
 
     var inerts = {};

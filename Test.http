@@ -1,7 +1,7 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNzc3MzgxLCJleHAiOjE2MjA3ODgxODF9.DHC4-CpiPJI8tdoYL6HR0i3R36617hFa3nxR6fRX5Eo
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwNzg4NTk4LCJleHAiOjE2MjA3OTkzOTh9.S3apMmXuH3Dg0eME8tndwW8DJVeypuaedKQU9UtYPyo
 ###
 
 GET {{host}}/api/user
@@ -163,13 +163,13 @@ x-auth: {{token}}
 
 ###
 
-PUT  {{host}}/api/matrix/sw3fB24tf
+PUT  {{host}}/api/matrix/CMujcd5qW
 Content-Type: application/json
 x-auth: {{token}}
 
 {
-    "url": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0276f574-98ea-4e2d-ba44-68f500bf01bc/ddzwl1q-e1bc144e-dfb8-4762-9c09-e2dc22695568.png/v1/fill/w_662,h_347,strp/resident_evil_8_village_logo_png_by_xgamergreaserx_ddzwl1q-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzQ3IiwicGF0aCI6IlwvZlwvMDI3NmY1NzQtOThlYS00ZTJkLWJhNDQtNjhmNTAwYmYwMWJjXC9kZHp3bDFxLWUxYmMxNDRlLWRmYjgtNDc2Mi05YzA5LWUyZGMyMjY5NTU2OC5wbmciLCJ3aWR0aCI6Ijw9NjYyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.ICy3D-5oRWvpBvZ0XEVyMuSswnLJhwiy7dzTRSY6xyY",
-    "nombre": "SuperVillanos123",
+    "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F08%2FIron-man-feature-image.jpg&f=1&nofb=1",
+    "nombre": "Superhéroes",
     "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
     "fecha": "28/04/2021",
     "categoria1": {

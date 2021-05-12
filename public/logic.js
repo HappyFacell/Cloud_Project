@@ -84,18 +84,15 @@ function initDivs(max_font_size) {
         var dummy_element = test_divs[i];
         if (!dummy_element) {
             var dummy_element = document.createElement("div");
-            //dummy_element.style.opacity = 0;
             dummy_element.style.display = "block";
-            //dummy_element.style.overflowX = "auto";
             dummy_element.style.position = "absolute";
-            //dummy_element.style.visibility = "hidden";
             dummy_element.style.left = "-100000px";
             dummy_element.style.top = -(i * 120) + "px";
             dummy_element.style.fontFamily = "Verdana, Arial, Helvetica, sans-serif";
             dummy_element.style.color = "#000";
             dummy_element.style.border = "3px solid black";
             dummy_element.style.fontSize = i + "px";
-            //dummy_element.setAttribute("id", "test-height")
+
             test_divs[i] = dummy_element;
             var body = document.querySelectorAll('body')[0];
             body.appendChild(dummy_element);
@@ -203,9 +200,6 @@ function _shrink_cell($cell, $scaler, max_width, max_height, max_font_size, tran
     $scaler.style.fontSize = font_size + "px";
     $scaler.style.transform = "";
 
-    //text_length_font_size_cache[text.length] = Math.max(font_size, text_length_font_size_cache[text.length] || 0)
-
-
     var extra_width = 0 // parseInt(styles.getPropertyValue("padding-left")) + parseInt(styles.getPropertyValue("padding-right"));
     var extra_height = 0 //parseInt(styles.getPropertyValue("padding-top")) + parseInt(styles.getPropertyValue("padding-bottom"));
     if (capsizes) {
@@ -217,7 +211,7 @@ function _shrink_cell($cell, $scaler, max_width, max_height, max_font_size, tran
     var h = bbox.height;
     var scale = Math.min(1, Math.min(1.0 * (max_width - extra_width) / w, 1.0 * (max_height - extra_height) / h));
     if (scale != 1) {
-        //debugger;
+
     }
     $scaler.style.transform = (transforms || "") + " scale(" + scale + ") ";
 
@@ -256,11 +250,10 @@ function renderQueue() {
         item[0].apply(item[1], item.slice(2));
         render_queue_index++;
     }
-    //console.log(i);
+
 
     if (render_queue_index >= render_queue.length) {
-        //clearInterval(render_interval);
-        //render_interval = null;
+
         work_scheduled = false;
     } else {
         work_scheduled = setTimeout(renderQueue)
@@ -273,12 +266,9 @@ function enqueueRender() {
     return
     render_queue.push(Array.prototype.slice.call(arguments))
     if (!work_scheduled) {
-        //console.log("starting queue");
         work_scheduled = setTimeout(renderQueue)
-        //render_interval = setInterval(renderQueue, 16);
     }
 
-    //setTimeout(renderQueue, 10);
 }
 function matches(el, selector) {
     return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
@@ -359,7 +349,6 @@ function prepwork(cell, scale_factor) {
     var height = cell.parentElement.clientHeight;
     var inner = cell.querySelectorAll(".cell-inner")[0];
     var capsizes = mode == "play" ? false : true;
-    //console.log(height);
     shrink_cell(cell, inner, width * scale_factor, height * scale_factor, 32, "", capsizes);
     return inner
 }
