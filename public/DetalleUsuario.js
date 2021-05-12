@@ -7,7 +7,7 @@ function loadUser(Nombre, Apellido, Email, Password, Fecha, Sexo){
                     <b>Nombre</b>
                     <div class="input-group is-valid">
                         <input type="text" class="form-control is-valid" aria-describedby="validatedInputGroupPrepend"
-                            required pattern="[a-zA-Z\s]+" value="${Nombre}">
+                            required value="${Nombre}">
                         <div class="invalid-feedback">
                             Falta llenar campo
                         </div>
@@ -17,7 +17,7 @@ function loadUser(Nombre, Apellido, Email, Password, Fecha, Sexo){
                     <b>Apellido</b>
                     <div class="input-group is-valid">
                         <input type="text" class="form-control is-valid" aria-describedby="validatedInputGroupPrepend"
-                            required pattern="[a-zA-Z\s]+" value="${Apellido}">
+                            required value="${Apellido}">
                         <div class="invalid-feedback">
                             Falta llenar campo
                         </div>
