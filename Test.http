@@ -1,7 +1,7 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIwODM1NjM4LCJleHAiOjE2MjA4NDY0Mzh9.qdp6d7QL98KuXwXbODXCQhxyBh3x526gXyxoQH9vWAI
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0B0ZXN0IiwiaWF0IjoxNjIxMDEwMTI1LCJleHAiOjE2MjEwMjA5MjV9.1vanTW__e3e2zsaA38DfBePiaB79OmxmVXQKp3iqHXY
 ###
 
 GET {{host}}/api/user
@@ -15,10 +15,9 @@ Content-Type: application/json
 {
   "Edad": "21",
   "apellido": "Quirarte",
-  "correo": "cq@gmail.com",
+  "correo": "test3@iteso",
   "nombre": "Carlos",
   "password": "rufus117",
-  "url": "https://cdn.discordapp.com/attachments/694203486061199396/841818081076052008/unknown.png",
   "sexo": "Hombre"
   }
 
@@ -47,7 +46,7 @@ Content-Type: application/json
 
 ###
 
-DELETE {{host}}/api/user/dp5@gmail.com
+DELETE {{host}}/api/user/test3@iteso
 x-auth : {{token}}
 
 ###

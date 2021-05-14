@@ -29,6 +29,7 @@ router.get('/nombre/:nombre', validaciones.estaAutenticado, (req, res) => {
 
 //asegurar que tenga el header xauth
 router.post('/', async (req, res) => {
+    let imagen;
     console.log(req.body);
     let {
         nombre,
@@ -39,8 +40,15 @@ router.post('/', async (req, res) => {
         url,
         sexo
     } = req.body;
-    if (nombre && apellido && correo && Edad && password && url && sexo) {
-
+    if (nombre && apellido && correo && Edad && password && sexo) {
+        imagen = url;
+        if(!url){
+            // let sexo = detallesGenerales.sexo.toUpperCase() === "H" ?"Hombre" : "Mujer";
+            console.log(sexo, "paso la inexisteencia de la imagen");
+            let random = Math.floor(Math.random() * 100);
+            let sex = sexo.toUpperCase() === "HOMBRE"? "men" : "women"
+            imagen = `https://randomuser.me/api/portraits/${sex}/${random}.jpg`
+        }
         let hash = bcrypt.hashSync(password, 8);
 
         let doc = await User.guardarDatos({
@@ -50,7 +58,7 @@ router.post('/', async (req, res) => {
             Edad,
             password: hash,
             fecha: moment().format('DD/MM/YYYY'),
-            url,
+            url:imagen,
             sexo
         })
         console.log(doc);
