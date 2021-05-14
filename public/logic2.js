@@ -1,5 +1,5 @@
-sessionStorage.equipos = [];
-var modal = function () {}
+sessionStorage.equipos =[];
+var modal = function () { }
 
 var game = {}
 var mode = "play"
@@ -14,15 +14,10 @@ function getCurrentState() {
         var t = teams_dom[i];
         var name = t.querySelectorAll(".name")[0].textContent;
         var points = t.querySelectorAll(".points")[0].textContent;
-        teams[i] = {
-            name: name,
-            points: points
-        }
+        teams[i] = { name: name, points: points }
     }
-    if (document.querySelectorAll(".inert").length == 25) {
+    if(document.querySelectorAll(".inert").length == 25){
         sessionStorage.equipos = JSON.stringify(teams);
-        clearState();
-        game.init(true);
         window.location.href = "resultados.html";
     }
 
@@ -232,13 +227,11 @@ function clearLocalStorage() {
 }
 
 
-initial_state = {
-    "page": "menu"
-}
+initial_state = { "page": "menu" }
 
 try {
     history.replaceState(initial_state, "JeopardyLabs")
-} catch (e) {}
+} catch (e) { }
 
 game.first_render = true;
 
@@ -261,9 +254,7 @@ game.init = function (clear) {
         } while (val <= 0);
     }
 
-    renderState({
-        "page": "game"
-    })
+    renderState({ "page": "game" })
     // add all the teams
     document.getElementById("teams").style.display = "flex";
     var teams = document.querySelectorAll("#teams .team");
@@ -324,10 +315,8 @@ game.init = function (clear) {
     resize()
 
     try {
-        history.pushState({
-            "page": "game"
-        }, "JeopardyLabs");
-    } catch (e) {}
+        history.pushState({ "page": "game" }, "JeopardyLabs");
+    } catch (e) { }
 
     game.first_render = false;
     try {
@@ -427,7 +416,6 @@ function trimHTML(el) {
 modal.reveal = function () {
     var q = document.querySelectorAll("#question-modal .question")[0];
     q.style.display = "block";
-
     function scrollTo(element, to, duration) {
         var start = element.scrollTop,
             change = to - start,
@@ -498,10 +486,7 @@ modal.show = function (cell, no_push_state) {
     if (!no_push_state) {
         try {
             console.log("pre length", window.history.length);
-            history.pushState({
-                "page": "slide",
-                "cell": cell.getAttribute("id")
-            }, "JeopardyLabs");
+            history.pushState({ "page": "slide", "cell": cell.getAttribute("id") }, "JeopardyLabs");
             console.log("post length", window.history.length);
         } catch (e) {
 
@@ -587,9 +572,7 @@ modal.show = function (cell, no_push_state) {
 modal.hide = function () {
     document.querySelectorAll(".grid")[0].setAttribute("aria-hidden", "false");
     backToGame()
-    renderState({
-        "page": "game"
-    });
+    renderState({ "page": "game" });
     if (current_cell) {
         current_cell.focus()
     }
@@ -603,9 +586,7 @@ function backToGame() {
 }
 
 function backToMenu() {
-    renderState({
-        "page": "menu"
-    });
+    renderState({ "page": "menu" });
     var state = window.history.state;
     if (state.page == "slide") {
         window.history.go(-2);

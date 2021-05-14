@@ -38,7 +38,6 @@ function miniToHTML(url, nombre, descripcion){
 
 function cargarMini(id,url, nombre, descripcion){
   sessionStorage.matriz = id;
-  console.log(id);
   document.getElementById("modalDelete").innerHTML = miniToHTML(url, nombre, descripcion);
 }
 

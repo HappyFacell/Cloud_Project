@@ -1,6 +1,6 @@
 var user;
 function usertoHTML(user) {
-  let sexo = user.sexo.toUpperCase() === "H" ? "Hombre" : "Mujer";
+  user.sexo = user.sexo.toUpperCase() === "H" ? "Hombre" : "Mujer";
   document.getElementById("EF").innerHTML = `
     
     
@@ -74,7 +74,7 @@ function usertoHTML(user) {
             <b>Imagen:</b>
             <div class="input-group is-valid">
                 <input type="url" class="form-control is-valid" aria-describedby="validatedInputGroupPrepend"
-                    required placeholder="Url de imagen de perfil" name="url" value="${user.url}">
+                    placeholder="Url de imagen de perfil" name="url" value="${user.url}">
                 <div class="invalid-feedback">
                     Falta llenar campo
                 
