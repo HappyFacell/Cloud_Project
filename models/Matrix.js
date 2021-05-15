@@ -45,7 +45,6 @@ let MatrixSchema = mongoose.Schema({
     },
     rol: {
         type: Boolean,
-        default: true,
         required: true
     },
     autor: {
