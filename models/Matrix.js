@@ -44,12 +44,11 @@ let MatrixSchema = mongoose.Schema({
         required: true
     },
     rol: {
-        type:String,
-        default:'PUBLIC',
-        enum:['PUBLIC','PRIVATED'],
-        required:true
+        type: Boolean,
+        default: true,
+        required: true
     },
-    autor:{
+    autor: {
         type: String,
         required: true
     }
