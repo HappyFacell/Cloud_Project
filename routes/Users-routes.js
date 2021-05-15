@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
             // let sexo = detallesGenerales.sexo.toUpperCase() === "H" ?"Hombre" : "Mujer";
             console.log(sexo, "paso la inexisteencia de la imagen");
             let random = Math.floor(Math.random() * 100);
-            let sex = sexo.toUpperCase() === "HOMBRE"? "men" : "women"
+            let sex = sexo.toUpperCase() === "H"? "men" : "women"
             console.log(sex,sexo);
             imagen = `https://randomuser.me/api/portraits/${sex}/${random}.jpg`
         }
