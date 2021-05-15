@@ -1,6 +1,7 @@
 var user;
-let sex = user.sexo.toUpperCase() === "H"? "Hombre" : "Mujer"
 function usertoHTML(user) {
+
+    let sex = user.sexo.toUpperCase() === "H"? "Hombre" : "Mujer"
     document.getElementById("mini").innerHTML = `
     <img src="${user.url}" alt="imagen de usuario" style="width: 5rem;">
     <h3>Nombre: ${user.nombre}</h3>
