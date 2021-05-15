@@ -43,11 +43,13 @@ router.post('/', async (req, res) => {
         categoria2,
         categoria3,
         categoria4,
-        categoria5
+        categoria5,
+        rol,
+        autor
     } = req.body;
 
 
-    if (nombre && url && descripcion && categoria1 && categoria2 && categoria3 && categoria4 && categoria5) {
+    if (nombre && url && descripcion && categoria1 && categoria2 && categoria3 && categoria4 && categoria5 && rol && autor) {
 
         // alumnos.push({nombre, calificacion})
         // fs.writeFileSync(path.join(__dirname,'../alumnos.json'), JSON.stringify(alumnos))
@@ -65,7 +67,9 @@ router.post('/', async (req, res) => {
             categoria2,
             categoria3,
             categoria4,
-            categoria5
+            categoria5,
+            rol,
+            autor
         })
         console.log(doc);
         if (doc && !doc.error) {

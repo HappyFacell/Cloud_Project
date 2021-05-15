@@ -43,6 +43,16 @@ let MatrixSchema = mongoose.Schema({
         type: Object,
         required: true
     },
+    rol: {
+        type:String,
+        default:'PUBLIC',
+        enum:['PUBLIC','PRIVATED'],
+        required:true
+    },
+    autor:{
+        type: String,
+        required: true
+    }
 })
 
 
