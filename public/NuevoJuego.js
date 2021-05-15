@@ -1,12 +1,12 @@
 let bc1,bc2,bc3,bc4,bc5,bc6,bt1,bt2,bt3,bt4,bt5,bt6;
 bc1=bc2=bc3=bc4=bc5=bc6=bt1=bt2=bt3=bt4=bt5=bt6=be=false;
 
-
-
 let matrix_global= {
 url: String,
 nombre: String,
 descripcion: String,
+rol: Boolean,
+autor: String,
 categoria1: {
   titulo : String,
   pregunta1 :String,
@@ -99,7 +99,6 @@ categoria5: {
 }
 };
 
-
 function categoriaToHTML(categoria) {
   let string = "";
   let ftitle = categoria.replace(/ /g, "-");
@@ -143,30 +142,46 @@ function cargarMatrices() {
   let string = "";
   string +=`  
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-  <div class="card text-center" style="width: 18rem; height: 56rem;">
-    <h5 class="card-title"><input type="text" id ="nombre_juego" class="form-control" required placeholder="Nombre de tu juego:" id="nombre"/>
-      <div class="card-body">
-        <form id ="main">
-          <div class="container-fluid">
-            <div class="form-group">
-              <div>
-                <input type="text" class="form-control" id = "descripcion_juego" required placeholder="Descripción de tu juego:" id="descripcion"/>
+    <div class="card text-center" style="width: 18rem; height: 56rem;">
+      <h5 class="card-title"><input type="text" id="nombre_juego" class="form-control" required
+          placeholder="Nombre de tu juego:" id="nombre" />
+        <div class="card-body">
+          <form id="main">
+            <div class="container-fluid">
+              <div class="form-group">
+                <div>
+                  <input type="text" class="form-control" id="descripcion_juego" required
+                    placeholder="Descripción de tu juego:" id="descripcion" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div>
+                  <input type="url" class="form-control" required id="url_imagen"
+                    placeholder="Url de imagen de portada:" id="url" />
+                </div>
               </div>
             </div>
-            <div class="form-group">
-              <div>
-                <input type="url" class="form-control" required id="url_imagen" placeholder="Url de imagen de portada:" id="url"/>
-              </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="privada">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Juego privado (solo podrás verlo tú).
+              </label>
             </div>
-          </div>
-        </form>
-      </div>
-      <button class="btn btn-primary" id="RM"  style="width: 15rem; height: 15rem; margin-top: 28rem;" onclick="actualizarDatos()" disabled>
-        <h3 style="margin-top: 3rem;">Subir nuevo juego</h3>
-        <h1><i class="fas fa-cloud-upload-alt"></i></h1>
-      </button>
-  </div>
-</div>`;
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="publica" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Juego público (pueden jugarlo otros usuarios).
+              </label>
+            </div>
+          </form>
+        </div>
+        <button class="btn btn-primary" id="RM" style="width: 15rem; height: 15rem; margin-top: 22rem;"
+          onclick="actualizarDatos()" disabled>
+          <h3 style="margin-top: 3rem;">Subir nuevo juego</h3>
+          <h1><i class="fas fa-cloud-upload-alt"></i></h1>
+        </button>
+    </div>
+  </div>`;
   string += categoriaToHTML("Categoría 1");
   string += categoriaToHTML("Categoría 2");
   string += categoriaToHTML("Categoría 3");
@@ -175,7 +190,7 @@ function cargarMatrices() {
   document.getElementById("info").innerHTML = string;
 }
 
-function actualizarDatos(){
+async function actualizarDatos(){
   let nj = document.getElementById("nombre_juego");
   matrix_global.nombre = nj.value;
   let dj = document.getElementById("descripcion_juego");
@@ -311,6 +326,14 @@ function actualizarDatos(){
   matrix_global.categoria5.valor3 = cat_5[8].value;
   matrix_global.categoria5.valor4 = cat_5[11].value;
   matrix_global.categoria5.valor5 = cat_5[14].value;
+
+  if(document.getElementById("publica").checked){
+    matrix_global.rol = true;
+  }else{
+    matrix_global.rol = false;
+  }
+  let user = await loadUser();
+  matrix_global.autor = user.nombre + " " + user.apellido;
 
   if(Mtitle1.value == Mtitle2.value || Mtitle1.value == Mtitle3.value || Mtitle1.value == Mtitle4.value || Mtitle1.value == Mtitle5.value ||
     Mtitle2.value == Mtitle3.value || Mtitle2.value == Mtitle4.value || Mtitle2.value == Mtitle5.value || Mtitle3.value == Mtitle4.value || Mtitle3.value == Mtitle5.value ||
@@ -452,17 +475,36 @@ T6.addEventListener("change",function (e){
   if (checks.length <=0 ){
       bt6 = true;
   }
-  console.log(bc1,bc2,bc3,bc4,bc5,bc6,bt1,bt2,bt3,bt4,bt5,bt6)
   if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
     document.querySelector("#RM").removeAttribute("disabled");
   }
 })    
 
+async function loadUser() {
+  let url = "https://proyectojeopardy2021.herokuapp.com/api/user/" + sessionStorage.login;
+  let resp = await fetch(url, {
+      method: "GET",
+      headers: {
+          "x-auth": sessionStorage.userToken,
+          'Content-Type': 'application/json'
+      },
+  })
+  if (resp.ok) {
+      return await resp.json();
+      setTimeout(() => {
+          console.log("fuera de tiempo")
+      }, 5000);
+  } else {
+      console.log("valio madre")
+      setTimeout(() => {
+          console.log("En la torre")
+      }, 5000);
+  }
+}
 
 async function guardarMatriz() {
-  event.preventDefault();
   let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix";
-  console.log(matrix_global)
+  console.log(matrix_global);
   let resp = await fetch(url, {
     method: "POST",
     headers: {

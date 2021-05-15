@@ -53,15 +53,53 @@
   </nav>
   <div id="errores"></div>
   
-  <div class="box">
-    <div class="container">
-      <div class="row" id="info">
-
+  <div class="container" id="barra">
+    <div class="row">
+      <div class="col-sm">
+        <input type="text" id = "NB" class="form-control" placeholder="nombre de juego a buscar" style="width: 66rem;" oninput="busqueda()">
       </div>
     </div>
   </div>
 
+  <div class="box">
+    <div class="container">
+      <div class="row" id="info">
+      </div>
+    </div>
+  </div>
 
+  <nav aria-label="Page navigation example" style="margin-left: 42%;">
+    <ul class="pagination" id="pagination">
+
+    </ul>
+  </nav>
+
+  <!-- Modal Confirm Elim-->
+  <div class="modal fade" id="modelDelete" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header" id="alerts">
+          <h5 class="modal-title">¿Estás seguro de borrar este juego?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body justify-content-center" id="modalDelete">
+        </div>
+        <div class="modal-footer">
+          <table style="width:100%">
+            <tr>
+              <th><button type="buton" class="btn btn-danger" href="consultas.html" id="boton1" onclick="deleteMatrix()" >Eliminar</button></th>
+              <th><button type="button" class="btn btn-secondary" data-dismiss="modal" id="boton2">Cancelar</button>
+              </th>
+            </tr>
+          </table>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -75,6 +113,5 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </body>
-<script src="NuevoJuego.js"></script>
-
+<script src="publicGames.js"></script>
 </html>

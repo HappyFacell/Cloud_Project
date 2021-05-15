@@ -1,7 +1,6 @@
 let matrix_global;
 
 function categoriaToHTML(categoria) {
-  //console.log(categoria.titulo);
   let ftitle = categoria.titulo.replace(/ /g, "-");
   let string = "";
   for (let x = 1; x < 6; x++){
@@ -24,7 +23,6 @@ function categoriaToHTML(categoria) {
     </div>
     `;
   }
-  console.log("Tema"+ftitle);
   return (`
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
   <div class="card text-center" style="width: 18rem;">
@@ -61,10 +59,15 @@ async function cargarMatrices(matriz) {
                 <input type="text" class="form-control" value="${matriz.url}" id="url"/>
               </div>
             </div>
+            <div class="form-group">
+            <div>
+              <h3>Esta matriz fue creada por: ${matriz.autor}</h3>
+            </div>
+          </div>
           </div>
         </form>
       </div>
-      <a href="#" class="btn btn-success" style="width: 15rem; height: 15rem; margin-top: 28rem;" onclick="actualizarDatos()">
+      <a href="#" class="btn btn-success" style="width: 15rem; height: 15rem; margin-top: 20rem;" onclick="actualizarDatos()">
       <h3 style="margin-top: 3rem;">Actualizar juego</h3>
       <h1><i class="fas fa-cloud-upload-alt"></i></h1>
     </a>

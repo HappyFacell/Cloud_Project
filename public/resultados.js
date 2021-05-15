@@ -1,4 +1,6 @@
 function compareTeam(a, b){
+    a=Number(a);
+    b=Number(b);
     if(a.points > b.points){
         return -1;
     }

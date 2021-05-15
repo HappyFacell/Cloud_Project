@@ -1,14 +1,12 @@
 var user;
 function usertoHTML(user) {
-
-    let sex = user.sexo.toUpperCase() === "H"? "Hombre" : "Mujer"
     document.getElementById("mini").innerHTML = `
     <img src="${user.url}" alt="imagen de usuario" style="width: 5rem;">
     <h3>Nombre: ${user.nombre}</h3>
     <h3>Apellido: ${user.apellido}</h3>
     <h3>Correo: ${user.correo}</h3>
     <h3>Fecha: ${user.fecha}</h3>
-    <h3>Sexo: ${sex}</h3>
+    <h3>Sexo: ${user.sexo}</h3>
     <h3>Edad: ${user.Edad} años</h3>
     `;
     document.getElementById("content").innerHTML = `
