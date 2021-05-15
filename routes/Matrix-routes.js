@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
     } = req.body;
 
 
-    if (nombre && url && descripcion && categoria1 && categoria2 && categoria3 && categoria4 && categoria5 && rol && autor) {
+    if (nombre && url && descripcion && categoria1 && categoria2 && categoria3 && categoria4 && categoria5 && autor) {
 
         // alumnos.push({nombre, calificacion})
         // fs.writeFileSync(path.join(__dirname,'../alumnos.json'), JSON.stringify(alumnos))
