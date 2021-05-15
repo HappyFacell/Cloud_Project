@@ -47,6 +47,7 @@ router.post('/', async (req, res) => {
             console.log(sexo, "paso la inexisteencia de la imagen");
             let random = Math.floor(Math.random() * 100);
             let sex = sexo.toUpperCase() === "HOMBRE"? "men" : "women"
+            console.log(sex,sexo);
             imagen = `https://randomuser.me/api/portraits/${sex}/${random}.jpg`
         }
         let hash = bcrypt.hashSync(password, 8);

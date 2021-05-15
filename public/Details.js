@@ -63,7 +63,7 @@ async function deletedUser() {
     })
     if (resp.ok) {
         sessionStorage.userToken = undefined;
-        window.location.href = "Index.html";
+        window.location.href = "index.html";
     } else {
         sendError("No se pudo eliminar la matríz, vuelva a cargar la pagina e intente de nuevo")
     }

@@ -1,7 +1,7 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0BpdGVzbyIsImlhdCI6MTYyMTA5NjE2NSwiZXhwIjoxNjIxMTA2OTY1fQ.FRXGEvG7ajYBeT5MZYSRTDFcdw2-78vsO680chB4Plc
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0BpdGVzbyIsImlhdCI6MTYyMTExMjQ0NSwiZXhwIjoxNjIxMTIzMjQ1fQ.L5lJkEarxfXcYtxk8gvm1e21hzpWk9ec5izkwZ8WFW0
 ###
 
 GET {{host}}/api/user
@@ -46,7 +46,7 @@ Content-Type: application/json
 
 ###
 
-DELETE {{host}}/api/user/ritabonitafresitaculoncita@test.com
+DELETE {{host}}/api/user/test3@iteso
 x-auth : {{token}}
 
 ###
@@ -60,7 +60,7 @@ Content-Type: application/json
 
 {
     "url": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic0.cbrimages.com%2Fwordpress%2Fwp-content%2Fuploads%2F2020%2F08%2FIron-man-feature-image.jpg&f=1&nofb=1",
-    "nombre": "Superhéroes15",
+    "nombre": "Superhéroes16",
     "descripcion": "Jeopardy de superhéroes, con preguntas de Dc y Marvel.",
     "categoria1": {
       "titulo": "Conocimiento general",
