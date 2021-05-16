@@ -33,7 +33,7 @@ function miniToHTML(url, nombre, descripcion) {
         src=${(url)}
         alt="JEOPARDY" style="width: 286px; height: 150px;">
       <div class="card-body">
-        <h5 class="card-title">${(nombre)}</h5>
+        <h5 class="card-title">${(nombre.split(",")[0])}</h5>
         <p class="card-text">${(descripcion)}</p>
       </div>
     </div>
@@ -151,7 +151,7 @@ async function getData() {
 }
 
 async function deleteMatrix() {
-  user.matrices = user.matrices.filter (e =>e != sessionStorage.matriz)
+  user.matrices = user.matrices.filter(e => e != sessionStorage.matriz)
   console.log(user.matrices);
   let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/" + sessionStorage.matriz;
   let resp = await fetch(url, {
