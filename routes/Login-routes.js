@@ -9,6 +9,7 @@ console.log("cargando auth-router.js");
 router.post('/login', validaciones.validarLogin, async (req, res) => {
     //buscar alumno con ese correo
     let user = await User.getUser(req.body.correo)
+    console.log(bcrypt.compareSync(req.body.password, user.password));
     if (user) {
         //comparar el password con el hash de la base de datos
         if (bcrypt.compareSync(req.body.password, user.password)) {
@@ -16,7 +17,7 @@ router.post('/login', validaciones.validarLogin, async (req, res) => {
             let token = jwt.sign({
                 correo: user.correo
             }, 'Jeopardy', {
-                expiresIn: 60 * 360
+                expiresIn: 60 * 180
             })
             res.send({
                 token: token
