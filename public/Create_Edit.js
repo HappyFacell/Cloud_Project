@@ -142,7 +142,6 @@ async function getData() {
     user = await resp.json();
     for (matrices in user.matrices) {
       arrayMatrices.push(await getMatrizData(user.matrices[matrices]));
-      console.log(arrayMatrices);
     }
     data = arrayMatrices;
     cargarMatrices(arrayMatrices);
@@ -152,8 +151,7 @@ async function getData() {
 }
 
 async function deleteMatrix() {
-  let index = user.matrices.findIndex(i => i == sessionStorage.matriz);
-  user.matrices.splice(index, 1)
+  user.matrices = user.matrices.filter (e =>e != sessionStorage.matriz)
   console.log(user.matrices);
   let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/" + sessionStorage.matriz;
   let resp = await fetch(url, {
