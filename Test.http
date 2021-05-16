@@ -26,8 +26,8 @@ POST  {{host}}/api/auth/login
 Content-Type: application/json
 
 {
-    "correo": "is722820@iteso.mx",
-    "password": "1234"
+    "correo": "is719276@iteso.mx",
+    "password": "123"
 }
 ###
 PUT {{host}}/api/user/is722820@iteso.mx
