@@ -43,12 +43,12 @@ router.post('/', async (req, res) => {
     } = req.body;
     if (nombre && apellido && correo && Edad && password && sexo) {
         imagen = url;
-        if(!url){
+        if (!url) {
             // let sexo = detallesGenerales.sexo.toUpperCase() === "H" ?"Hombre" : "Mujer";
             console.log(sexo, "paso la inexisteencia de la imagen");
             let random = Math.floor(Math.random() * 100);
-            let sex = sexo.toUpperCase() === "H"? "men" : "women"
-            console.log(sex,sexo);
+            let sex = sexo.toUpperCase() === "H" ? "men" : "women"
+            console.log(sex, sexo);
             imagen = `https://randomuser.me/api/portraits/${sex}/${random}.jpg`
         }
         let hash = bcrypt.hashSync(password, 8);
@@ -60,7 +60,7 @@ router.post('/', async (req, res) => {
             Edad,
             password: hash,
             fecha: moment().format('DD/MM/YYYY'),
-            url:imagen,
+            url: imagen,
             matrices,
             sexo
         })
@@ -79,11 +79,13 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:email', validaciones.estaAutenticado, async (req, res) => {
-    // let user = await User.getUser(req.params.email)
-    // if (user.password !=  req.body.password) {
-    //     req.body.password = bcrypt.hashSync(req.body.password, 8);    
-    // }
-    
+    let user = await User.getUser(req.params.email)
+    if (req.body.password) {
+        if (user.password != req.body.password) {
+            req.body.password = bcrypt.hashSync(req.body.password, 8);
+        }
+    }
+
     let doc = await User.updateDatos(req.params.email, req.body);
     res.send(doc)
 })
