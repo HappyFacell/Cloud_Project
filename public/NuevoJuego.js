@@ -1,102 +1,102 @@
-let bc1,bc2,bc3,bc4,bc5,bc6,bt1,bt2,bt3,bt4,bt5,bt6;
-bc1=bc2=bc3=bc4=bc5=bc6=bt1=bt2=bt3=bt4=bt5=bt6=be=false;
+let bc1, bc2, bc3, bc4, bc5, bc6, bt1, bt2, bt3, bt4, bt5, bt6;
+bc1 = bc2 = bc3 = bc4 = bc5 = bc6 = bt1 = bt2 = bt3 = bt4 = bt5 = bt6 = be = false;
 
-let matrix_global= {
-url: String,
-nombre: String,
-descripcion: String,
-rol: Boolean,
-autor: String,
-categoria1: {
-  titulo : String,
-  pregunta1 :String,
-  respuesta1 :String,
-  valor1 : Number,
-  pregunta2 :String,
-  respuesta2 :String,
-  valor2 : Number,
-  pregunta3 :String,
-  respuesta3 :String,
-  valor3 : Number,
-  pregunta4 :String,
-  respuesta4 :String,
-  valor4 : Number,
-  pregunta5  :String,
-  respuesta5 : String,
-  valor5 : Number
-},
-categoria2: {
-  titulo : String,
-  pregunta1 :String,
-  respuesta1 :String,
-  valor1 : Number,
-  pregunta2 :String,
-  respuesta2 :String,
-  valor2 : Number,
-  pregunta3 :String,
-  respuesta3 :String,
-  valor3 : Number,
-  pregunta4 :String,
-  respuesta4 :String,
-  valor4 :Number,
-  pregunta5  :String,
-  respuesta5 : String,
-  valor5 : Number
-},
-categoria3: {
-  titulo : String,
-  pregunta1 :String,
-  respuesta1 :String,
-  valor1 : Number,
-  pregunta2 :String,
-  respuesta2 :String,
-  valor2 : Number,
-  pregunta3 :String,
-  respuesta3 :String,
-  valor3 : Number,
-  pregunta4 :String,
-  respuesta4 :String,
-  valor4 :Number,
-  pregunta5  :String,
-  respuesta5 : String,
-  valor5 : Number
-},
-categoria4: {
-  titulo : String,
-  pregunta1 :String,
-  respuesta1 :String,
-  valor1 : Number,
-  pregunta2 :String,
-  respuesta2 :String,
-  valor2 : Number,
-  pregunta3 :String,
-  respuesta3 :String,
-  valor3 : Number,
-  pregunta4 :String,
-  respuesta4 :String,
-  valor4 :Number,
-  pregunta5  :String,
-  respuesta5 : String,
-  valor5 : Number
-},
-categoria5: {
-  titulo : String,
-  pregunta1 :String,
-  respuesta1 :String,
-  valor1 : Number,
-  pregunta2 :String,
-  respuesta2 :String,
-  valor2 : Number,
-  pregunta3 :String,
-  respuesta3 :String,
-  valor3 : Number,
-  pregunta4 :String,
-  respuesta4 :String,
-  valor4 :Number,
-  pregunta5  :String,
-  respuesta5 : String,
-  valor5 : Number
-}
+let matrix_global = {
+  url: String,
+  nombre: String,
+  descripcion: String,
+  rol: Boolean,
+  autor: String,
+  categoria1: {
+    titulo: String,
+    pregunta1: String,
+    respuesta1: String,
+    valor1: Number,
+    pregunta2: String,
+    respuesta2: String,
+    valor2: Number,
+    pregunta3: String,
+    respuesta3: String,
+    valor3: Number,
+    pregunta4: String,
+    respuesta4: String,
+    valor4: Number,
+    pregunta5: String,
+    respuesta5: String,
+    valor5: Number
+  },
+  categoria2: {
+    titulo: String,
+    pregunta1: String,
+    respuesta1: String,
+    valor1: Number,
+    pregunta2: String,
+    respuesta2: String,
+    valor2: Number,
+    pregunta3: String,
+    respuesta3: String,
+    valor3: Number,
+    pregunta4: String,
+    respuesta4: String,
+    valor4: Number,
+    pregunta5: String,
+    respuesta5: String,
+    valor5: Number
+  },
+  categoria3: {
+    titulo: String,
+    pregunta1: String,
+    respuesta1: String,
+    valor1: Number,
+    pregunta2: String,
+    respuesta2: String,
+    valor2: Number,
+    pregunta3: String,
+    respuesta3: String,
+    valor3: Number,
+    pregunta4: String,
+    respuesta4: String,
+    valor4: Number,
+    pregunta5: String,
+    respuesta5: String,
+    valor5: Number
+  },
+  categoria4: {
+    titulo: String,
+    pregunta1: String,
+    respuesta1: String,
+    valor1: Number,
+    pregunta2: String,
+    respuesta2: String,
+    valor2: Number,
+    pregunta3: String,
+    respuesta3: String,
+    valor3: Number,
+    pregunta4: String,
+    respuesta4: String,
+    valor4: Number,
+    pregunta5: String,
+    respuesta5: String,
+    valor5: Number
+  },
+  categoria5: {
+    titulo: String,
+    pregunta1: String,
+    respuesta1: String,
+    valor1: Number,
+    pregunta2: String,
+    respuesta2: String,
+    valor2: Number,
+    pregunta3: String,
+    respuesta3: String,
+    valor3: Number,
+    pregunta4: String,
+    respuesta4: String,
+    valor4: Number,
+    pregunta5: String,
+    respuesta5: String,
+    valor5: Number
+  }
 };
 
 function categoriaToHTML(categoria) {
@@ -140,7 +140,7 @@ function categoriaToHTML(categoria) {
 
 function cargarMatrices() {
   let string = "";
-  string +=`  
+  string += `  
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="card text-center" style="width: 18rem; height: 56rem;">
       <h5 class="card-title"><input type="text" id="nombre_juego" class="form-control" required
@@ -190,7 +190,7 @@ function cargarMatrices() {
   document.getElementById("info").innerHTML = string;
 }
 
-async function actualizarDatos(){
+async function actualizarDatos() {
   let nj = document.getElementById("nombre_juego");
   matrix_global.nombre = nj.value;
   let dj = document.getElementById("descripcion_juego");
@@ -198,29 +198,29 @@ async function actualizarDatos(){
   let ui = document.getElementById("url_imagen");
   matrix_global.url = ui.value;
 
-  let titulo1 = String("Categoría 1").replace(/ /g, "-"); ;
-  let cat_1 = document.querySelectorAll("#"+titulo1+" input");
-  let Mtitle1 = document.getElementById("Tema"+titulo1);
+  let titulo1 = String("Categoría 1").replace(/ /g, "-");;
+  let cat_1 = document.querySelectorAll("#" + titulo1 + " input");
+  let Mtitle1 = document.getElementById("Tema" + titulo1);
 
 
-  let titulo2 = String("Categoría 2").replace(/ /g, "-"); ;
-  let cat_2 = document.querySelectorAll("#"+titulo2+" input");
-  let Mtitle2 = document.getElementById("Tema"+titulo2);
+  let titulo2 = String("Categoría 2").replace(/ /g, "-");;
+  let cat_2 = document.querySelectorAll("#" + titulo2 + " input");
+  let Mtitle2 = document.getElementById("Tema" + titulo2);
 
-  let titulo3 = String("Categoría 3").replace(/ /g, "-"); ;
-  let cat_3 = document.querySelectorAll("#"+titulo3+" input");
-  let Mtitle3 = document.getElementById("Tema"+titulo3);
-  
-  let titulo4 = String("Categoría 4").replace(/ /g, "-"); ;
-  let cat_4 = document.querySelectorAll("#"+titulo4+" input");
-  let Mtitle4 = document.getElementById("Tema"+titulo4);
+  let titulo3 = String("Categoría 3").replace(/ /g, "-");;
+  let cat_3 = document.querySelectorAll("#" + titulo3 + " input");
+  let Mtitle3 = document.getElementById("Tema" + titulo3);
 
-  let titulo5 = String("Categoría 5").replace(/ /g, "-"); ;
-  let cat_5 = document.querySelectorAll("#"+titulo5+" input");
-  let Mtitle5 = document.getElementById("Tema"+titulo5);
+  let titulo4 = String("Categoría 4").replace(/ /g, "-");;
+  let cat_4 = document.querySelectorAll("#" + titulo4 + " input");
+  let Mtitle4 = document.getElementById("Tema" + titulo4);
 
-  
-  if(hasNumber(Mtitle1.value[0]) || hasNumber(Mtitle2.value[0]) || hasNumber(Mtitle3.value[0]) || hasNumber(Mtitle4.value[0]) || hasNumber(Mtitle5.value[0])){
+  let titulo5 = String("Categoría 5").replace(/ /g, "-");;
+  let cat_5 = document.querySelectorAll("#" + titulo5 + " input");
+  let Mtitle5 = document.getElementById("Tema" + titulo5);
+
+
+  if (hasNumber(Mtitle1.value[0]) || hasNumber(Mtitle2.value[0]) || hasNumber(Mtitle3.value[0]) || hasNumber(Mtitle4.value[0]) || hasNumber(Mtitle5.value[0])) {
     sendError("Las categorias no pueden empezar con numeros");
     return;
   }
@@ -264,7 +264,7 @@ async function actualizarDatos(){
   matrix_global.categoria5.pregunta4 = cat_5[9].value;
   matrix_global.categoria5.pregunta5 = cat_5[12].value;
 
-  
+
   //Asignación de respuestas:
   matrix_global.categoria1.respuesta1 = cat_1[1].value;
   matrix_global.categoria1.respuesta2 = cat_1[4].value;
@@ -326,21 +326,21 @@ async function actualizarDatos(){
   matrix_global.categoria5.valor3 = cat_5[8].value;
   matrix_global.categoria5.valor4 = cat_5[11].value;
   matrix_global.categoria5.valor5 = cat_5[14].value;
-  
-  if(Mtitle1.value == Mtitle2.value || Mtitle1.value == Mtitle3.value || Mtitle1.value == Mtitle4.value || Mtitle1.value == Mtitle5.value ||
+
+  if (Mtitle1.value == Mtitle2.value || Mtitle1.value == Mtitle3.value || Mtitle1.value == Mtitle4.value || Mtitle1.value == Mtitle5.value ||
     Mtitle2.value == Mtitle3.value || Mtitle2.value == Mtitle4.value || Mtitle2.value == Mtitle5.value || Mtitle3.value == Mtitle4.value || Mtitle3.value == Mtitle5.value ||
-    Mtitle4.value == Mtitle5.value){
-        sendError("Los titulos de las categorias no deben repetirse")
-      return;
-  } 
+    Mtitle4.value == Mtitle5.value) {
+    sendError("Los titulos de las categorias no deben repetirse")
+    return;
+  }
 
   let user = await loadUser();
   matrix_global.autor = user.nombre + " " + user.apellido;
 
-  if(document.getElementById("publica").checked){
+  if (document.getElementById("publica").checked) {
     matrix_global.rol = true;
     guardarMatriz();
-  }else{
+  } else {
     matrix_global.rol = false;
     let newMatriz = await guardarMatriz();
     user.matrices.push(newMatriz.id);
@@ -351,34 +351,34 @@ async function actualizarDatos(){
 cargarMatrices();
 
 let F1 = document.querySelector("#Categoría-1");
-F1.addEventListener("change",function (e){
+F1.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#Categoría-1 input:invalid");
-  if (checks.length <=0 ){
-      bc1 = true;
+  if (checks.length <= 0) {
+    bc1 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
 })
 
 let F2 = document.querySelector("#Categoría-2");
-F2.addEventListener("change",function (e){
+F2.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#Categoría-2 input:invalid");
-  if (checks.length <=0 ){
-      bc2 = true;
+  if (checks.length <= 0) {
+    bc2 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
 })
 
 let F3 = document.querySelector("#Categoría-3");
-F3.addEventListener("change",function (e){
+F3.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#Categoría-3 input:invalid");
-  if (checks.length <=0 ){
-      bc3 = true;
+  if (checks.length <= 0) {
+    bc3 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
 })
@@ -386,117 +386,117 @@ F3.addEventListener("change",function (e){
 
 
 let F4 = document.querySelector("#Categoría-4");
-F4.addEventListener("change",function (e){
+F4.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#Categoría-4 input:invalid");
-  if (checks.length <=0 ){
-      bc4 = true;
+  if (checks.length <= 0) {
+    bc4 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
 })
 
 let F5 = document.querySelector("#Categoría-5");
-F5.addEventListener("change",function (e){
+F5.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#Categoría-5 input:invalid");
-  if (checks.length <=0 ){
-      bc5 = true;
+  if (checks.length <= 0) {
+    bc5 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 let F6 = document.querySelector("#main");
-F6.addEventListener("change",function (e){
+F6.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#main input:invalid");
-  if (checks.length <=0 ){
-      bc6 = true;
+  if (checks.length <= 0) {
+    bc6 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 let T1 = document.querySelector("#TemaCategoría-1");
-T1.addEventListener("change",function (e){
+T1.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#TemaCategoría-1 input:invalid");
-  if (checks.length <=0 ){
-      bt1 = true;
+  if (checks.length <= 0) {
+    bt1 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 let T2 = document.querySelector("#TemaCategoría-2");
-T2.addEventListener("change",function (e){
+T2.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#TemaCategoría-2 input:invalid");
-  if (checks.length <=0 ){
-      bt2 = true;
+  if (checks.length <= 0) {
+    bt2 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 let T3 = document.querySelector("#TemaCategoría-3");
-T3.addEventListener("change",function (e){
+T3.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#TemaCategoría-3 input:invalid");
-  if (checks.length <=0 ){
-      bt3 = true;
+  if (checks.length <= 0) {
+    bt3 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 let T4 = document.querySelector("#TemaCategoría-4");
-T4.addEventListener("change",function (e){
+T4.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#TemaCategoría-4 input:invalid");
-  if (checks.length <=0 ){
-      bt4 = true;
+  if (checks.length <= 0) {
+    bt4 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 let T5 = document.querySelector("#TemaCategoría-5");
-T5.addEventListener("change",function (e){
+T5.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#TemaCategoría-5 input:invalid");
-  if (checks.length <=0 ){
-      bt5 = true;
+  if (checks.length <= 0) {
+    bt5 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 let T6 = document.querySelector("#nombre_juego");
-T6.addEventListener("change",function (e){
+T6.addEventListener("change", function (e) {
   let checks = document.querySelectorAll("#nombre_juego input:invalid");
-  if (checks.length <=0 ){
-      bt6 = true;
+  if (checks.length <= 0) {
+    bt6 = true;
   }
-  if(bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6){
+  if (bc1 && bc2 && bc3 && bc4 && bc5 && bc6 && bt1 && bt2 && bt3 && bt4 && bt5 && bt6) {
     document.querySelector("#RM").removeAttribute("disabled");
   }
-})    
+})
 
 async function loadUser() {
   let url = "https://proyectojeopardy2021.herokuapp.com/api/user/" + sessionStorage.login;
   let resp = await fetch(url, {
-      method: "GET",
-      headers: {
-          "x-auth": sessionStorage.userToken,
-          'Content-Type': 'application/json'
-      },
+    method: "GET",
+    headers: {
+      "x-auth": sessionStorage.userToken,
+      'Content-Type': 'application/json'
+    },
   })
   if (resp.ok) {
-      return await resp.json();
+    return await resp.json();
   } else {
-      console.log(resp.json());
+    console.log(resp.json());
   }
 }
 
@@ -510,14 +510,14 @@ async function guardarMatriz() {
     body: JSON.stringify(matrix_global)
   })
   if (resp.ok) {
-    if(matrix_global.rol){
+    if (matrix_global.rol) {
       window.location.href = "Create_Edit.html";
-    }else{
+    } else {
       return await resp.json();
     }
   } else {
-      console.log(await resp.json());
-    }
+    console.log(await resp.json());
+  }
 }
 
 async function editUser(datos) {
@@ -542,7 +542,7 @@ function hasNumber(myString) {
   return /\d/.test(myString);
 }
 
-function sendError(mensaje){
+function sendError(mensaje) {
   document.getElementById("errores").innerHTML = `
   <div class="alert alert-danger" role="alert">
   ${mensaje}
@@ -550,7 +550,7 @@ function sendError(mensaje){
   `;
 }
 
-function logOut(){
+function logOut() {
   sessionStorage.userToken = "";
-  sessionStorage.matriz ="";
+  sessionStorage.matriz = "";
 }

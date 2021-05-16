@@ -3,7 +3,7 @@ let matrix_global;
 function categoriaToHTML(categoria) {
   let ftitle = categoria.titulo.replace(/ /g, "-");
   let string = "";
-  for (let x = 1; x < 6; x++){
+  for (let x = 1; x < 6; x++) {
     string +=
       `          
       <div class="form-group">
@@ -84,28 +84,28 @@ async function cargarMatrices(matriz) {
   document.getElementById("info").innerHTML = string;
 }
 
-function actualizarDatos(){
-  let titulo1 = String(matrix_global.categoria1.titulo).replace(/ /g, "-"); ;
-  let cat_1 = document.querySelectorAll("#"+titulo1+" input");
-  let Mtitle1 = document.getElementById("Tema"+titulo1);
+function actualizarDatos() {
+  let titulo1 = String(matrix_global.categoria1.titulo).replace(/ /g, "-");;
+  let cat_1 = document.querySelectorAll("#" + titulo1 + " input");
+  let Mtitle1 = document.getElementById("Tema" + titulo1);
 
-  let titulo2 = String(matrix_global.categoria2.titulo).replace(/ /g, "-"); ;
-  let cat_2 = document.querySelectorAll("#"+titulo2+" input");
-  let Mtitle2 = document.getElementById("Tema"+titulo2);
+  let titulo2 = String(matrix_global.categoria2.titulo).replace(/ /g, "-");;
+  let cat_2 = document.querySelectorAll("#" + titulo2 + " input");
+  let Mtitle2 = document.getElementById("Tema" + titulo2);
 
-  let titulo3 = String(matrix_global.categoria3.titulo).replace(/ /g, "-"); ;
-  let cat_3 = document.querySelectorAll("#"+titulo3+" input");
-  let Mtitle3 = document.getElementById("Tema"+titulo3);
-  
-  let titulo4 = String(matrix_global.categoria4.titulo).replace(/ /g, "-"); ;
-  let cat_4 = document.querySelectorAll("#"+titulo4+" input");
-  let Mtitle4 = document.getElementById("Tema"+titulo4);
+  let titulo3 = String(matrix_global.categoria3.titulo).replace(/ /g, "-");;
+  let cat_3 = document.querySelectorAll("#" + titulo3 + " input");
+  let Mtitle3 = document.getElementById("Tema" + titulo3);
 
-  let titulo5 = String(matrix_global.categoria5.titulo).replace(/ /g, "-"); ;
-  let cat_5 = document.querySelectorAll("#"+titulo5+" input");
-  let Mtitle5 = document.getElementById("Tema"+titulo5);
+  let titulo4 = String(matrix_global.categoria4.titulo).replace(/ /g, "-");;
+  let cat_4 = document.querySelectorAll("#" + titulo4 + " input");
+  let Mtitle4 = document.getElementById("Tema" + titulo4);
 
-  
+  let titulo5 = String(matrix_global.categoria5.titulo).replace(/ /g, "-");;
+  let cat_5 = document.querySelectorAll("#" + titulo5 + " input");
+  let Mtitle5 = document.getElementById("Tema" + titulo5);
+
+
   let nj = document.getElementById("nombre");
   matrix_global.nombre = nj.value;
   let dj = document.getElementById("descripcion");
@@ -115,7 +115,7 @@ function actualizarDatos(){
 
   //Asignación de Titulos:
 
-  if(hasNumber(Mtitle1.value[0]) || hasNumber(Mtitle2.value[0]) || hasNumber(Mtitle3.value[0]) || hasNumber(Mtitle4.value[0]) || hasNumber(Mtitle5.value[0])){
+  if (hasNumber(Mtitle1.value[0]) || hasNumber(Mtitle2.value[0]) || hasNumber(Mtitle3.value[0]) || hasNumber(Mtitle4.value[0]) || hasNumber(Mtitle5.value[0])) {
     sendError("Las categorias no pueden empezar con numeros");
     return;
   }
@@ -159,7 +159,7 @@ function actualizarDatos(){
   matrix_global.categoria5.pregunta4 = cat_5[9].value;
   matrix_global.categoria5.pregunta5 = cat_5[12].value;
 
-  
+
   //Asignación de respuestas:
   matrix_global.categoria1.respuesta1 = cat_1[1].value;
   matrix_global.categoria1.respuesta2 = cat_1[4].value;
@@ -222,19 +222,19 @@ function actualizarDatos(){
   matrix_global.categoria5.valor4 = cat_5[11].value;
   matrix_global.categoria5.valor5 = cat_5[14].value;
 
-  if(Mtitle1.value == Mtitle2.value || Mtitle1.value == Mtitle3.value || Mtitle1.value == Mtitle4.value || Mtitle1.value == Mtitle5.value ||
+  if (Mtitle1.value == Mtitle2.value || Mtitle1.value == Mtitle3.value || Mtitle1.value == Mtitle4.value || Mtitle1.value == Mtitle5.value ||
     Mtitle2.value == Mtitle3.value || Mtitle2.value == Mtitle4.value || Mtitle2.value == Mtitle5.value || Mtitle3.value == Mtitle4.value || Mtitle3.value == Mtitle5.value ||
-    Mtitle4.value == Mtitle5.value){
-        sendError("Los titulos de las categorias no deben repetirse")
-      return;
-  } 
-   ActualizarDatos();  
-  
+    Mtitle4.value == Mtitle5.value) {
+    sendError("Los titulos de las categorias no deben repetirse")
+    return;
+  }
+  ActualizarDatos();
+
 }
 
 async function getData() {
   let id = sessionStorage.matriz;
-  let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/"+id;
+  let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/" + id;
   let resp = await fetch(url, {
     method: "GET",
     headers: {
@@ -245,15 +245,15 @@ async function getData() {
     matrix_global = await resp.json();
     cargarMatrices(matrix_global);
   } else {
-      sendError("Error 404, no se pudo encontrar la matríz a editar, intente de nuevo");
-      window.location.href = "Create_Edit.html";
+    sendError("Error 404, no se pudo encontrar la matríz a editar, intente de nuevo");
+    window.location.href = "Create_Edit.html";
   }
 }
 
 async function ActualizarDatos() {
   event.preventDefault();
   let id = sessionStorage.matriz;
-  let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/"+id;
+  let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/" + id;
 
   let resp = await fetch(url, {
     method: "PUT",
@@ -266,7 +266,7 @@ async function ActualizarDatos() {
   if (resp.ok) {
     window.location.href = "Create_Edit.html";
   } else {
-      sendError("Error, no se pudo actualizar")
+    sendError("Error, no se pudo actualizar")
   }
 }
 getData();
@@ -275,7 +275,7 @@ function hasNumber(myString) {
   return /\d/.test(myString);
 }
 
-function sendError(mensaje){
+function sendError(mensaje) {
   document.getElementById("errores").innerHTML = `
   <div class="alert alert-danger" role="alert">
   ${mensaje}
@@ -283,7 +283,7 @@ function sendError(mensaje){
   `;
 }
 
-function logOut(){
+function logOut() {
   sessionStorage.userToken = "";
-  sessionStorage.matriz ="";
+  sessionStorage.matriz = "";
 }

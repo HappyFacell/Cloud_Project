@@ -1,20 +1,20 @@
-function compareTeam(a, b){
-    a=Number(a);
-    b=Number(b);
-    if(a.points > b.points){
+function compareTeam(a, b) {
+    a = Number(a);
+    b = Number(b);
+    if (a.points > b.points) {
         return -1;
     }
-    if(a.points < b.points){
+    if (a.points < b.points) {
         return 1;
     }
-    if(a.points == b.points){
+    if (a.points == b.points) {
         return 0;
     }
 }
 
-function puntuacionToHTML(array){
+function puntuacionToHTML(array) {
     array.sort(compareTeam);
-    let string ="<br>";
+    let string = "<br>";
     document.getElementById("info").innerHTML = `
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="card text-center" style="width: 18rem;">
@@ -49,11 +49,10 @@ function puntuacionToHTML(array){
     </div>
     </div>
     </div>`;
-    for (let x=3; x<array.length; x++){
-        string+=`<p>Lugar: ${x+1}. ${array[x].name} con ${array[x].points} puntos</p>`;
+    for (let x = 3; x < array.length; x++) {
+        string += `<p>Lugar: ${x+1}. ${array[x].name} con ${array[x].points} puntos</p>`;
     }
     document.getElementById("perdedores").innerHTML += string;
 }
 
 puntuacionToHTML(JSON.parse(sessionStorage.equipos));
-

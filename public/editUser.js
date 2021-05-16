@@ -1,4 +1,5 @@
 var user;
+
 function usertoHTML(user) {
   user.sexo = user.sexo.toUpperCase() === "H" ? "Hombre" : "Mujer";
   document.getElementById("EF").innerHTML = `
@@ -116,7 +117,7 @@ async function loadUser(datos) {
 
 async function editUser(datos) {
   let url =
-    "https://proyectojeopardy2021.herokuapp.com/api/user/"+sessionStorage.login;
+    "https://proyectojeopardy2021.herokuapp.com/api/user/" + sessionStorage.login;
   let resp = await fetch(url, {
     method: "PUT",
     headers: {
@@ -140,10 +141,10 @@ loadUser();
 let form = document.getElementById("EF");
 
 function cbSometerForm() {
-    event.preventDefault();
-    let data = new FormData(event.target);
-    let edited_user = Object.fromEntries(data.entries());
-    if(document.getElementById("password1").value == document.getElementById("password2").value){
-        editUser(edited_user);
-    } 
+  event.preventDefault();
+  let data = new FormData(event.target);
+  let edited_user = Object.fromEntries(data.entries());
+  if (document.getElementById("password1").value == document.getElementById("password2").value) {
+    editUser(edited_user);
+  }
 }

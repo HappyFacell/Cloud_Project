@@ -9,7 +9,8 @@ function removeClass(selector, cls) {
 function debounce(func, wait, immediate) {
     var timeout;
     return function () {
-        var context = this, args = arguments;
+        var context = this,
+            args = arguments;
         var later = function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
@@ -47,8 +48,7 @@ function capSizes(el, max_width, max_height) {
                 node.style.maxWidth = real_width * a + "px";
                 node.style.maxHeight = max_height * a + "px";
                 did_work = true;
-            } catch (e) {
-            }
+            } catch (e) {}
 
         }
     }
@@ -58,6 +58,7 @@ function capSizes(el, max_width, max_height) {
 
 var shrink_cell_cache = {};
 var enable_caching = false;
+
 function shrink_cell($cell, $scaler, max_width, max_height, max_font_size, transforms, capsizes) {
     if (enable_caching) {
         var cache_key = [max_width, max_height, $cell.innerHTML].join(".");
@@ -76,6 +77,7 @@ function shrink_cell($cell, $scaler, max_width, max_height, max_font_size, trans
 }
 
 test_divs = [];
+
 function initDivs(max_font_size) {
     if (test_divs.length - 1 == max_font_size) {
         return;
@@ -104,7 +106,9 @@ function shrink_in_place($cell, max_font_size, min_font_size) {
     var div = $cell;
     var font_size = max_font_size;
 
-    var a = { length: max_font_size + 1 }
+    var a = {
+        length: max_font_size + 1
+    }
     var font_size = binarySearch(a, function (el, array, font_size) {
         div.style.fontSize = font_size + "px";
         var isHorizontalScrollbar = div.scrollWidth > div.clientWidth;
@@ -122,7 +126,8 @@ function shrink_in_place($cell, max_font_size, min_font_size) {
 }
 
 function binarySearch(array, pred) {
-    var lo = -1, hi = array.length;
+    var lo = -1,
+        hi = array.length;
     while (1 + lo < hi) {
         var mi = lo + ((hi - lo) >> 1);
         if (pred(array[mi], array, mi)) {
@@ -193,7 +198,9 @@ function _shrink_cell($cell, $scaler, max_width, max_height, max_font_size, tran
     font_size = Math.max(min_font_size, Math.min(font_size, max_font_size));
 
     if (!$scaler) {
-        return { font_size: font_size }
+        return {
+            font_size: font_size
+        }
     }
 
     $cell.style.fontSize = "";
@@ -215,8 +222,12 @@ function _shrink_cell($cell, $scaler, max_width, max_height, max_font_size, tran
     }
     $scaler.style.transform = (transforms || "") + " scale(" + scale + ") ";
 
-    return { font_size: font_size, scale: scale };
+    return {
+        font_size: font_size,
+        scale: scale
+    };
 }
+
 function getBoundingClientRect(el) {
     var bbox = el.getBoundingClientRect();
     return {
@@ -270,6 +281,7 @@ function enqueueRender() {
     }
 
 }
+
 function matches(el, selector) {
     return (el.matches || el.matchesSelector || el.msMatchesSelector || el.mozMatchesSelector || el.webkitMatchesSelector || el.oMatchesSelector).call(el, selector);
 }

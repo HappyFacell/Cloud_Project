@@ -1,4 +1,5 @@
 var user;
+
 function usertoHTML(user) {
     document.getElementById("mini").innerHTML = `
     <img src="${user.url}" alt="imagen de usuario" style="width: 5rem;">
@@ -53,13 +54,13 @@ async function loadUser(datos) {
 }
 
 async function deletedUser() {
-    let url = "https://proyectojeopardy2021.herokuapp.com/api/user/"+user.correo;
+    let url = "https://proyectojeopardy2021.herokuapp.com/api/user/" + user.correo;
     console.log(url);
     let resp = await fetch(url, {
-      method: "DELETE",
-      headers: {
-        "x-auth": sessionStorage.userToken
-      }
+        method: "DELETE",
+        headers: {
+            "x-auth": sessionStorage.userToken
+        }
     })
     if (resp.ok) {
         sessionStorage.userToken = undefined;

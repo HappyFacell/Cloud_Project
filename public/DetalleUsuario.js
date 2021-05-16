@@ -1,4 +1,4 @@
-function loadUser(Nombre, Apellido, Email, Password, Fecha, Sexo){
+function loadUser(Nombre, Apellido, Email, Password, Fecha, Sexo) {
     document.getElementById("content").innerHTML = `
     <div class="container mt-5">
         <form class="was-validated">

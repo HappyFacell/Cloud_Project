@@ -22,7 +22,8 @@ async function matrizToHTML(matriz) {
         </div>
         </div>`);
       }
-    }return (`
+    }
+    return (`
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="card text-center" style="width: 18rem;">
     <img class="card-img-top"
@@ -54,8 +55,8 @@ async function matrizToHTML(matriz) {
 
 async function downloadMatrix(id) {
   let dupedMatriz;
-  for(matriz in data){
-    if(data[matriz].id == id){
+  for (matriz in data) {
+    if (data[matriz].id == id) {
       dupedMatriz = Object.assign({}, data[matriz]);
       dupedMatriz.nombre += "," + sessionStorage.login;
       dupedMatriz._id = undefined;
@@ -129,7 +130,9 @@ async function cargarMatrices(data) {
 
 function busqueda() {
   let Nombre = document.getElementById("NB").value;
-  let filteredMatrix = data.filter((function (element) { return element.nombre.toUpperCase().includes(Nombre.toUpperCase()) }));
+  let filteredMatrix = data.filter((function (element) {
+    return element.nombre.toUpperCase().includes(Nombre.toUpperCase())
+  }));
   cargarMatrices(filteredMatrix);
 }
 
@@ -263,7 +266,7 @@ async function editUser(datos) {
 }
 
 async function getMatrix(id) {
-  let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/"+id;
+  let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/" + id;
   let resp = await fetch(url, {
     method: "GET",
     headers: {
@@ -273,8 +276,8 @@ async function getMatrix(id) {
   if (resp.ok) {
     return await resp.json();
   } else {
-      sendError("Error 404, no se pudo encontrar la matríz a editar, intente de nuevo");
-      window.location.href = "Create_Edit.html";
+    sendError("Error 404, no se pudo encontrar la matríz a editar, intente de nuevo");
+    window.location.href = "Create_Edit.html";
   }
 }
 
