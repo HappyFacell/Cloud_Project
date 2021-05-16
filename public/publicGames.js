@@ -119,7 +119,7 @@ async function cargarMatrices(data) {
   document.getElementById("info").innerHTML += `
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <div class="add" style="width: 18rem;">
-      <a href="./NuevoJuego.html" class="btn btn-primary" style="height: 330px;">
+      <a href="NuevoJuego.html" class="btn btn-primary" style="height: 330px;">
         <h3>Crear un nuevo juego</h3>
         <h1><i class="fas fa-plus-circle"></i></h1>
       </a>

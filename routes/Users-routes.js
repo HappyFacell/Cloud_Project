@@ -38,6 +38,7 @@ router.post('/', async (req, res) => {
         Edad,
         password,
         url,
+        matrices,
         sexo
     } = req.body;
     if (nombre && apellido && correo && Edad && password && sexo) {
@@ -60,6 +61,7 @@ router.post('/', async (req, res) => {
             password: hash,
             fecha: moment().format('DD/MM/YYYY'),
             url:imagen,
+            matrices,
             sexo
         })
         console.log(doc);

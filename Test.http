@@ -4,7 +4,7 @@
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0BpdGVzbyIsImlhdCI6MTYyMTEyMzc3NiwiZXhwIjoxNjIxMTQ1Mzc2fQ.1cb2GI7Lml0CNBCNMT6JSFF-oD_VJ-g-7S2XIOvNKB0
 ###
 
-GET {{host}}/api/user/is722820@iteso.mx
+GET {{host}}/api/user/is719276@iteso.mx
 x-auth: {{token}}
 
 ###
@@ -35,17 +35,20 @@ Content-Type: application/json
 x-auth: {{token}}
 
 {
-  "matrices": [],
-  "_id": "609b3c944aa57e0015ee7178",
-  "nombre": "Diego",
-  "apellido": "Ferreira Lee Eng",
-  "correo": "is722820@iteso.mx",
-  "Edad": 21,
+  "matrices": [
+    "YBXfw6lsh",
+    "amCbEKwk4",
+    "T9ubMRwkl",
+    "FnBn-9hva"
+  ],
+  "nombre": "Iñaki",
+  "apellido": "Orozco",
+  "correo": "is719276@iteso.mx",
+  "Edad": 20,
   "password": "1234",
   "fecha": "12/05/2021",
-  "url": "https://randomuser.me/api/portraits/men/8.jpg",
-  "sexo": "Hombre",
-  "__v": 0
+  "url": "https://scontent-qro1-1.xx.fbcdn.net/v/t1.18169-9/541832_144569279028591_2071363651_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=de6eea&_nc_eui2=AeG7kxAwOw4DPbIWwfWESHMb-Ax1MQaL8nL4DHUxBovycq3oPDL-hdSaONETSAvV0hDqGNxcHs3CupVqzWCEpg6x&_nc_ohc=5J98d8Vv6JkAX-r2_rg&_nc_ht=scontent-qro1-1.xx&oh=9555c8a1d17cd52780ca157cb0242b6c&oe=60C58E62",
+  "sexo": "Hombre"
 }
 
 
