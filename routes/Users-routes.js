@@ -79,10 +79,10 @@ router.post('/', async (req, res) => {
 })
 
 router.put('/:email', validaciones.estaAutenticado, async (req, res) => {
-    let user = await User.getUser(req.params.email)
-    if (user.password !=  req.body.password) {
-        req.body.password = bcrypt.hashSync(req.body.password, 8);    
-    }
+    // let user = await User.getUser(req.params.email)
+    // if (user.password !=  req.body.password) {
+    //     req.body.password = bcrypt.hashSync(req.body.password, 8);    
+    // }
     
     let doc = await User.updateDatos(req.params.email, req.body);
     res.send(doc)
