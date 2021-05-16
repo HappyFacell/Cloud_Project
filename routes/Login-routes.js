@@ -7,10 +7,12 @@ const validaciones = require('../middlewares/validaciones')
 console.log("cargando auth-router.js");
 
 router.post('/login', validaciones.validarLogin, async (req, res) => {
+    console.log("Login");
+    console.log(req.body.password);
     //buscar alumno con ese correo
     let user = await User.getUser(req.body.correo)
-    console.log(bcrypt.compareSync(req.body.password, user.password));
     if (user) {
+        
         //comparar el password con el hash de la base de datos
         if (bcrypt.compareSync(req.body.password, user.password)) {
             //generación del token
