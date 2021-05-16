@@ -167,11 +167,7 @@ async function getData() {
   if (resp.ok) {
     await loadUser();
     data = await resp.json();
-    for (matriz in data){
-      if (!data[matriz].rol){
-        data.splice(matriz);
-      }
-    }
+    data = data.filter(e => e.rol == true);
     cargarMatrices(data);
   } else {
     sendError("El token expiró, vuelva a hacer Log in");

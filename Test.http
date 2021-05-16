@@ -4,7 +4,7 @@
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0BpdGVzbyIsImlhdCI6MTYyMTEyMzc3NiwiZXhwIjoxNjIxMTQ1Mzc2fQ.1cb2GI7Lml0CNBCNMT6JSFF-oD_VJ-g-7S2XIOvNKB0
 ###
 
-GET {{host}}/api/user/is722820@iteso.mx
+GET {{host}}/api/user
 x-auth: {{token}}
 
 ###
@@ -55,7 +55,7 @@ x-auth: {{token}}
 
 ###
 
-DELETE {{host}}/api/user/juan@test.com
+DELETE {{host}}/api/user/jr@gmail.com
 x-auth : {{token}}
 
 ###
