@@ -326,22 +326,26 @@ async function actualizarDatos(){
   matrix_global.categoria5.valor3 = cat_5[8].value;
   matrix_global.categoria5.valor4 = cat_5[11].value;
   matrix_global.categoria5.valor5 = cat_5[14].value;
-
-  if(document.getElementById("publica").checked){
-    matrix_global.rol = true;
-  }else{
-    matrix_global.rol = false;
-  }
-  let user = await loadUser();
-  matrix_global.autor = user.nombre + " " + user.apellido;
-
+  
   if(Mtitle1.value == Mtitle2.value || Mtitle1.value == Mtitle3.value || Mtitle1.value == Mtitle4.value || Mtitle1.value == Mtitle5.value ||
     Mtitle2.value == Mtitle3.value || Mtitle2.value == Mtitle4.value || Mtitle2.value == Mtitle5.value || Mtitle3.value == Mtitle4.value || Mtitle3.value == Mtitle5.value ||
     Mtitle4.value == Mtitle5.value){
         sendError("Los titulos de las categorias no deben repetirse")
       return;
   } 
-  guardarMatriz();
+
+  let user = await loadUser();
+  matrix_global.autor = user.nombre + " " + user.apellido;
+
+  if(document.getElementById("publica").checked){
+    matrix_global.rol = true;
+    guardarMatriz();
+  }else{
+    matrix_global.rol = false;
+    let newMatriz = await guardarMatriz();
+    user.matrices.push(newMatriz.id);
+    editUser(user);
+  }
 }
 
 cargarMatrices();
@@ -491,20 +495,13 @@ async function loadUser() {
   })
   if (resp.ok) {
       return await resp.json();
-      setTimeout(() => {
-          console.log("fuera de tiempo")
-      }, 5000);
   } else {
-      console.log("valio madre")
-      setTimeout(() => {
-          console.log("En la torre")
-      }, 5000);
+      console.log(resp.json());
   }
 }
 
 async function guardarMatriz() {
   let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix";
-  console.log(matrix_global);
   let resp = await fetch(url, {
     method: "POST",
     headers: {
@@ -513,10 +510,32 @@ async function guardarMatriz() {
     body: JSON.stringify(matrix_global)
   })
   if (resp.ok) {
+    if(matrix_global.rol){
+      window.location.href = "Create_Edit.html";
+    }else{
+      return await resp.json();
+    }
+  } else {
+      console.log(await resp.json());
+    }
+}
+
+async function editUser(datos) {
+  let url =
+    "https://proyectojeopardy2021.herokuapp.com/api/user/" + sessionStorage.login;
+  let resp = await fetch(url, {
+    method: "PUT",
+    headers: {
+      "x-auth": sessionStorage.userToken,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(datos),
+  });
+  if (resp.ok) {
     window.location.href = "Create_Edit.html";
   } else {
-      sendError("No se ha podido guardar la matriz, pruebe cambiando el nombre, puede que ya exista una con el mismo nombre")
-    }
+    console.log("valio madre");
+  }
 }
 
 function hasNumber(myString) {
