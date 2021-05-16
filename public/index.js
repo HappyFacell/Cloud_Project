@@ -61,7 +61,7 @@ function login() {
 };
 
 async function postToken(datos) {
-
+    
     let url = "https://proyectojeopardy2021.herokuapp.com/api/auth/login"
     let resp = await fetch(url, {
         method: "POST",
@@ -76,6 +76,7 @@ async function postToken(datos) {
         sessionStorage.login = datos.correo;
         window.location.href = "Create_Edit.html";
     } else {
+        console.log(resp);
         sendError("Usuario no encontrado")
         $('#ModalLogin').modal('hide');
         LF.reset();

@@ -1,5 +1,5 @@
-# @host = https://proyectojeopardy2021.herokuapp.com
-@host = http://localhost:3000
+@host = https://proyectojeopardy2021.herokuapp.com
+# @host = http://localhost:3000
 ###
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0BpdGVzbyIsImlhdCI6MTYyMTEyMzc3NiwiZXhwIjoxNjIxMTQ1Mzc2fQ.1cb2GI7Lml0CNBCNMT6JSFF-oD_VJ-g-7S2XIOvNKB0
 ###
@@ -35,9 +35,7 @@ Content-Type: application/json
 x-auth: {{token}}
 
 {
-    "matrices": [
-      "1neUqwk56"
-    ],
+    "matrices": [],
     "_id": "60a06a421d52f20015561078",
     "nombre": "Iñaki Sebastián",
     "apellido": "Orozco García",
