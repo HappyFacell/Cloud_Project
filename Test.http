@@ -30,12 +30,26 @@ Content-Type: application/json
     "password": "1234"
 }
 ###
-PUT {{host}}/api/user/is719276@iteso.mx
+PUT {{host}}/api/user/cq3@gmail.com
 Content-Type: application/json
 x-auth: {{token}}
 
 {
-    "matrices": []
+    "matrices": [
+      "Xt8Zwlohy",
+      "KyoSmqgt3",
+      "4fc0Amefm"
+    ],
+    "_id": "60a0760c7fd9f20015645103",
+    "nombre": "rr",
+    "apellido": "rr",
+    "correo": "cq3@gmail.com",
+    "Edad": 21,
+    "password": "1234",
+    "fecha": "16/05/2021",
+    "url": "https://randomuser.me/api/portraits/men/76.jpg",
+    "sexo": "H",
+    "__v": 0
   }
 
 
