@@ -82,9 +82,11 @@ async function cargarMatrices(data) {
   </div>`;
 }
 
-function busqueda(){
+function busqueda() {
   let Nombre = document.getElementById("NB").value;
-  let filteredMatrix = data.filter((function(element){return element.nombre.toUpperCase().includes(Nombre.toUpperCase())}));
+  let filteredMatrix = data.filter((function (element) {
+    return element.nombre.toUpperCase().includes(Nombre.toUpperCase())
+  }));
   cargarMatrices(filteredMatrix);
 }
 
@@ -104,9 +106,9 @@ function next() {
 
 function jump(position) {
   pos = position;
-  if(document.getElementById("NB").value != null){
+  if (document.getElementById("NB").value != null) {
     busqueda();
-  }else{
+  } else {
     cargarMatrices(data);
   }
 }
@@ -129,28 +131,30 @@ async function getMatrizData(id) {
 async function getData() {
   let url = "https://proyectojeopardy2021.herokuapp.com/api/user/" + sessionStorage.login;
   let resp = await fetch(url, {
-      method: "GET",
-      headers: {
-          "x-auth": sessionStorage.userToken,
-          'Content-Type': 'application/json'
-      },
+    method: "GET",
+    headers: {
+      "x-auth": sessionStorage.userToken,
+      'Content-Type': 'application/json'
+    },
   })
   if (resp.ok) {
     let arrayMatrices = [];
-      user = await resp.json();
-      for (matrices in user.matrices){
-        arrayMatrices.push(await getMatrizData(user.matrices[matrices]));
-      }
-      data = arrayMatrices;
-      cargarMatrices(arrayMatrices);
+    user = await resp.json();
+    for (matrices in user.matrices) {
+      arrayMatrices.push(await getMatrizData(user.matrices[matrices]));
+      console.log(arrayMatrices);
+    }
+    data = arrayMatrices;
+    cargarMatrices(arrayMatrices);
   } else {
-      console.log("valio madre")
+    console.log("valio madre")
   }
 }
 
-async function deleteMatrix(){
-  user.matrices.splice(sessionStorage.matriz)
-  editUser(user);
+async function deleteMatrix() {
+  let index = user.matrices.findIndex(i => i == sessionStorage.matriz);
+  user.matrices.splice(index, 1)
+  console.log(user.matrices);
   let url = "https://proyectojeopardy2021.herokuapp.com/api/matrix/" + sessionStorage.matriz;
   let resp = await fetch(url, {
     method: "DELETE",
@@ -159,7 +163,7 @@ async function deleteMatrix(){
     }
   })
   if (resp.ok) {
-    window.location.href = "Create_Edit.html";
+    await editUser(user);
   } else {
     sendError("No se pudo eliminar la matríz, vuelva a cargar la pagina e intente de nuevo")
   }
@@ -183,8 +187,7 @@ async function loadUser() {
 
 async function editUser(datos) {
   console.log(datos);
-  let url =
-    "https://proyectojeopardy2021.herokuapp.com/api/user/" + sessionStorage.login;
+  let url = "https://proyectojeopardy2021.herokuapp.com/api/user/" + sessionStorage.login;
   let resp = await fetch(url, {
     method: "PUT",
     headers: {
@@ -194,6 +197,7 @@ async function editUser(datos) {
     body: JSON.stringify(datos),
   });
   if (resp.ok) {
+    console.log(await resp.json());
     window.location.href = "Create_Edit.html";
   } else {
     console.log("valio madre");
