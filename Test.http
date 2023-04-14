@@ -1,9 +1,13 @@
 @host = https://proyectojeopardy2021.herokuapp.com
 # @host = http://localhost:3000
 ###
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJ0ZXN0M0BpdGVzbyIsImlhdCI6MTYyMTEyMzc3NiwiZXhwIjoxNjIxMTQ1Mzc2fQ.1cb2GI7Lml0CNBCNMT6JSFF-oD_VJ-g-7S2XIOvNKB0
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb3JyZW8iOiJpczcxOTI3NkBpdGVzby5teCIsImlhdCI6MTYyMTIxOTQ0MywiZXhwIjoxNjIxMjMwMjQzfQ.mjcWNxAiPKO9veT-MDu-Y3zMEjHZALOhbxTN8DEOIIU
 ###
+@CFE = https://app.cfe.mx/Aplicaciones/Otros/ConfirmacionAccesoServicios/ConfirmacionCorreo.aspx?id1=26951451&id2=88252875&id3=3&id4=d77e0c79e42e044845655bfe2c2df592
+###
+GET {{CFE}}
 
+###
 GET {{host}}/api/user
 x-auth: {{token}}
 
@@ -55,7 +59,7 @@ x-auth: {{token}}
 
 ###
 
-DELETE {{host}}/api/user/jr@gmail.com
+DELETE {{host}}/api/user/test3@iteso
 x-auth : {{token}}
 
 ###
